@@ -4,21 +4,24 @@ Account: Instagram **@aiedge.prompts** + Threads (same account). Niche: practica
 Scheduler: Metricool, brand/blogId **8307772**, timezone **Europe/Kiev**. Personal account **maks_aurelius must never be touched**.
 Owner notes (Ukrainian) live in the Obsidian vault on the owner's PC: `obsidian/Etsy/...`.
 
-## Weekly pipeline (all times Europe/Kyiv)
+## Daily pipeline (all times Europe/Kyiv) — the team works EVERY day
+
+**Daily quota per publishing day:** 1 Instagram Reel (18:00) + 3 Threads posts (15:30, 19:30, 22:30) + 2 stories (12:30, 12:35).
+Each day the chain prepares the missing items for today (slots ≥2 h ahead) and fully for tomorrow.
 
 | When | Agent | Reads | Writes |
 |---|---|---|---|
-| Daily 10:37 | 🔎 Trendwatcher (reference scout) | web, Reddit, Instagram/Threads/TikTok (built-in browser, view only) | `references/` + `obsidian/Etsy/Тренди/YYYY-MM-DD Тренди.md` |
-| Sun 11:44 | Niche scout (products) | web | `obsidian/Etsy/Розвідка/...` |
-| Sun 12:23 | 📊 Analyst | Metricool analytics | `obsidian/Etsy/Статистика/YYYY-MM-DD AI Edge.md` |
-| Sun 13:07 | 🎬 Creative director | trends + analytics + product/campaign notes + past weeks | `plans/YYYY-wNN.json` (repo) + `obsidian/Etsy/Контент-план/YYYY-wNN.md` |
-| Sun 14:17 | 🎨 Content maker | `plans/YYYY-wNN.json` | `posts/YYYY-wNN/*` + `posts/YYYY-wNN/manifest.json` (repo) |
-| Sun 15:43 | 📅 Poster | `posts/YYYY-wNN/manifest.json` | Metricool schedule + `obsidian/Etsy/Сторінки/Тиждень NN — AI Edge.md` |
-| Daily 19:47 | ⚖️ Judge (fact-check) | everything changed in the last 24 h: references, plans, manifests, scheduled posts, owner notes, goal numbers | `obsidian/Etsy/Сторінки/Суддя/YYYY-MM-DD.md`; fixes only objective link/handle errors |
+| Daily 08:37 | 🔎 Scout | web, Reddit, Instagram/Threads/TikTok (view only), Apify, Buzzfy | `references/library.json`, `references/YYYY-MM-DD.md` (section «Для директора сьогодні»), `obsidian/Etsy/Тренди/` |
+| Daily 09:23 | 📊 Analyst | Metricool, Buzzfy, Gumroad (view only) | `status/goal.json` progress, `obsidian/Etsy/Статистика/YYYY-MM-DD AI Edge.md` («Рекомендації для директора») |
+| Daily 10:13 | 🎬 Creative director | scout + analyst + judge reports | `plans/daily/YYYY-MM-DD.json` (date = publish day) + `obsidian/Etsy/Контент-план/YYYY-MM-DD.md` |
+| Daily 11:17 | 🎨 Content maker | `plans/daily/*.json` | `posts/daily/YYYY-MM-DD/*` + `manifest.json` |
+| Daily 13:43 | 📅 Poster | `posts/daily/*/manifest.json` + Threads texts from plans | Metricool schedule + `obsidian/Etsy/Сторінки/Розклад AI Edge.md` |
+| Daily 19:47 | ⚖️ Judge | everything changed in 24 h + tomorrow's quota in Metricool | `obsidian/Etsy/Сторінки/Суддя/YYYY-MM-DD.md` |
+| Sun 11:44 | 🧭 Niche scout (products) | web | `obsidian/Etsy/Розвідка/...` |
 
-The creative director must apply every item in the latest Judge report section «Для креативного директора».
-If an upstream file is missing, the agent does a reasonable version of that step itself and says so in its report.
-Week NN = ISO week of the first publication day. The posting week runs from the day after the last scheduled post.
+The director must apply the latest analyst «Рекомендації для директора» and judge «Для креативного директора».
+If an upstream file is missing, the agent waits briefly (git pull every 5 min), then does a reasonable version itself and marks ⚠️.
+Threads posts: plain text ≤500 chars (optionally 1 image); 3 different types per day (useful prompt/tip with real result · opinion/question that invites replies · mini before/after or list); only one of the three carries the Starter 10 link.
 
 ## Reference library: `references/` (built by the Trendwatcher, used by everyone)
 The trendwatcher runs **every day** and looks for **small creators whose posts outperform their size** — the "outliers":
