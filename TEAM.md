@@ -11,7 +11,7 @@ Each day the chain prepares the missing items for today (slots ≥2 h ahead) and
 
 | When | Agent | Reads | Writes |
 |---|---|---|---|
-| Daily 08:37 | 🔎 Scout | web, Reddit, Instagram/Threads/TikTok (view only), Apify, Buzzfy | `references/library.json`, `references/YYYY-MM-DD.md` (section «Для директора сьогодні»), `obsidian/Etsy/Тренди/` |
+| Daily 08:37 | 🔎 Scout | web, Reddit, Instagram/Threads/TikTok (view only), Buzzfy | `references/library.json`, `references/YYYY-MM-DD.md` (section «Для директора сьогодні»), `obsidian/Etsy/Тренди/` |
 | Daily 09:23 | 📊 Analyst | Metricool, Buzzfy, Gumroad (view only) | `status/goal.json` progress, `obsidian/Etsy/Статистика/YYYY-MM-DD AI Edge.md` («Рекомендації для директора») |
 | Daily 10:13 | 🎬 Creative director | scout + analyst + judge reports | `plans/daily/YYYY-MM-DD.json` (date = publish day) + `obsidian/Etsy/Контент-план/YYYY-MM-DD.md` |
 | Daily 11:17 | 🎨 Content maker | `plans/daily/*.json` | `posts/daily/YYYY-MM-DD/*` + `manifest.json` |
@@ -113,12 +113,11 @@ Templates/engine give **brand style only** (colors, fonts, safe zones). The **st
 
 ## Plugins & connectors — who uses what
 Verified 2026-11-23 (status/plugin_check.md): scheduled runs DO have humanizer, social-media-skills, marketing, buzzfy, virlo skills and apify/buzzfy/Metricool tools (no Virlo MCP server yet). Use a tool only if it is actually available in your session (check first); otherwise fall back to web search / the
-built-in browser and say so in your report. Always confirm Virlo/Apify credit cost limits: max ~1 paid Virlo run and
-max ~$0.50 of Apify per agent run unless the owner raised the budget in `obsidian/Etsy/Сторінки/Команда AI Edge.md`.
+built-in browser and say so in your report. **Apify is switched OFF by the owner (2026-11-23): do not use it.** Max ~1 paid Virlo run per agent run once Virlo is connected.
 
 | Agent | Primary tools |
 |---|---|
-| 🔎 Scout | **Virlo** (`virlo`, `trend-scout`, `creator-deep-dive`; rank by weighted virality ln(views/followers)×ln(followers)), **Apify** (Instagram/TikTok scrapers for exact views & followers), `social-media-skills:viral-reverse-engineering`, `trend-jacking` |
+| 🔎 Scout | **Virlo** (`virlo`, `trend-scout`, `creator-deep-dive`; rank by weighted virality ln(views/followers)×ln(followers)), `social-media-skills:viral-reverse-engineering`, `trend-jacking` |
 | 📊 Analyst | Metricool, **Buzzfy** `instagram-audit` / `reel-checkup`, `social-media-skills:analytics-and-reporting`, `marketing:performance-report` |
 | 🎬 Creative director | `virlo:short-form-trend-research`, `social-media-skills:batch-content-plan`, `content-pillars`, `hook-writer`, `campaign-and-launch-planning` |
 | 🎨 Content maker | `social-media-skills:carousel-writer`, `reels-script`, `story-writer`, `before-after-and-transformation`, `instagram-reels-publishing`, `platform-specs-and-validation`, `humanizer` |
