@@ -45,6 +45,10 @@ Every agent, at the end of each run, appends one line to `status/log.md` in this
 Public dashboard at https://makc9k.github.io/aiedge-media/hq/ reads `status/log.md`, `status/agents.json`, `status/goal.json` and `references/library.json` live.
 The 📊 Analyst appends a progress entry to `status/goal.json` every Sunday (same numbers as «🎯 Ціль місяця»): `{"date","ig","threads","followers_gain","leads","sales"}`. If you add an agent, add it to `status/agents.json`.
 
+**Director: mandatory items for week 2026-w49** (owner's request):
+1. Reel «I built 7 AI agents that run my Instagram»: screen recording of the live site (pipeline animation → agent cards with countdowns → reference wall → goal rings). Only real numbers from the site, no invented results. Hook in first 2 s. CTA: comment PROMPTS / free Starter 10.
+2. Weekly series «Week N: +X followers, Y downloads, Z sales» built from `status/goal.json` (real numbers only, even if small).
+
 ## Plan file: `plans/YYYY-wNN.json`
 ```json
 {
