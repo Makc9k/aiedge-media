@@ -14,7 +14,9 @@ Owner notes (Ukrainian) live in the Obsidian vault on the owner's PC: `obsidian/
 | Sun 13:07 | 🎬 Creative director | trends + analytics + product/campaign notes + past weeks | `plans/YYYY-wNN.json` (repo) + `obsidian/Etsy/Контент-план/YYYY-wNN.md` |
 | Sun 14:17 | 🎨 Content maker | `plans/YYYY-wNN.json` | `posts/YYYY-wNN/*` + `posts/YYYY-wNN/manifest.json` (repo) |
 | Sun 15:43 | 📅 Poster | `posts/YYYY-wNN/manifest.json` | Metricool schedule + `obsidian/Etsy/Сторінки/Тиждень NN — AI Edge.md` |
+| Daily 19:47 | ⚖️ Judge (fact-check) | everything changed in the last 24 h: references, plans, manifests, scheduled posts, owner notes, goal numbers | `obsidian/Etsy/Сторінки/Суддя/YYYY-MM-DD.md`; fixes only objective link/handle errors |
 
+The creative director must apply every item in the latest Judge report section «Для креативного директора».
 If an upstream file is missing, the agent does a reasonable version of that step itself and says so in its report.
 Week NN = ISO week of the first publication day. The posting week runs from the day after the last scheduled post.
 
