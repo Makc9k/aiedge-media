@@ -8,7 +8,7 @@ Owner notes (Ukrainian) live in the Obsidian vault on the owner's PC: `obsidian/
 
 | When | Agent | Reads | Writes |
 |---|---|---|---|
-| Sat 11:52 | 🔎 Trendwatcher | web, (optional) Instagram in the built-in browser, last swipe files | `obsidian/Etsy/Тренди/YYYY-MM-DD Тренди.md` |
+| Daily 10:37 | 🔎 Trendwatcher (reference scout) | web, Reddit, Instagram/Threads/TikTok (built-in browser, view only) | `references/` + `obsidian/Etsy/Тренди/YYYY-MM-DD Тренди.md` |
 | Sun 11:44 | Niche scout (products) | web | `obsidian/Etsy/Розвідка/...` |
 | Sun 12:23 | 📊 Analyst | Metricool analytics | `obsidian/Etsy/Статистика/YYYY-MM-DD AI Edge.md` |
 | Sun 13:07 | 🎬 Creative director | trends + analytics + product/campaign notes + past weeks | `plans/YYYY-wNN.json` (repo) + `obsidian/Etsy/Контент-план/YYYY-wNN.md` |
@@ -17,6 +17,27 @@ Owner notes (Ukrainian) live in the Obsidian vault on the owner's PC: `obsidian/
 
 If an upstream file is missing, the agent does a reasonable version of that step itself and says so in its report.
 Week NN = ISO week of the first publication day. The posting week runs from the day after the last scheduled post.
+
+## Reference library: `references/` (built by the Trendwatcher, used by everyone)
+The trendwatcher runs **every day** and looks for **small creators whose posts outperform their size** — the "outliers":
+accounts with roughly 1k–50k followers in our niche (AI prompts, AI tools, ChatGPT tips, AI productivity, AI for work/career)
+whose post/reel/thread got far more reach than usual for them (e.g. views ≥ 3× follower count, or ≥ 3× that creator's typical
+post). Big accounts are only noted, not prioritised — small outliers prove the *format* works, not the audience size.
+
+- `references/library.json` — one entry per reference:
+  `{"id", "date_found", "platform", "url", "creator", "followers", "metric": "views|likes|comments", "value", "outlier_ratio",
+    "format": "reel|carousel|single|thread|tiktok", "hook": "first line/slide, paraphrased", "benefit_shown": "before_after|chat_demo|list|comparison|story|other",
+    "why_it_worked", "how_we_adapt", "used_in": []}`
+  Numbers only if actually visible; otherwise `null` + `"metric_note": "not visible"`. Never invent metrics.
+- `references/YYYY-MM-DD.md` — the day's finds, human-readable, with links.
+- Store **links and our own analysis only** — never download or re-upload other people's images or videos.
+- The creative director must cite reference `id`s in `source_trend`; the content maker opens those links before designing,
+  and adds the post id to `used_in` once used.
+
+## Control panel (where Maksym watches the team)
+Every agent, at the end of each run, appends one line to `status/log.md` in this repo **and** to
+`obsidian/Etsy/Сторінки/Пульт команди.md`:
+`| YYYY-MM-DD HH:MM | <agent> | ✅/⚠️/❌ | what was done (1 line) | link to output |`
 
 ## Plan file: `plans/YYYY-wNN.json`
 ```json
