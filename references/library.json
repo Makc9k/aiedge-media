@@ -16,7 +16,9 @@
     "why_it_worked": "Personal, instantly testable payoff (your own face), shopping/salon use case, 'save for later' framing; prompts shown on screen so viewers save instead of comment.",
     "how_we_adapt": "Carousel 'Stop guessing at work': 3 prompts that read your resume/LinkedIn photo/email tone and tell you what to fix (best headline, best tone, best photo crop). Before/after slides + copy-paste prompt on the last slide.",
     "metric_note": "views from TikTok profile grid; creator's typical video ~5–50k",
-    "used_in": []
+    "used_in": [
+      "w48v2-d6-reel"
+    ]
   },
   {
     "id": "ref-20261123-02",
@@ -35,7 +37,9 @@
     "why_it_worked": "Learning/self-improvement promise with tangible outputs (flashcards, mind map); one input → five formats feels like a cheat code.",
     "how_we_adapt": "Reel/carousel 'Turn any 40-page report into 5 things your boss actually reads': exec summary, 1-slide visual, FAQ, action list, flashcards for the meeting. One prompt per output.",
     "metric_note": "views from TikTok profile grid",
-    "used_in": []
+    "used_in": [
+      "w48v2-d4-reel"
+    ]
   },
   {
     "id": "ref-20261123-03",
@@ -54,7 +58,9 @@
     "why_it_worked": "Strong visual before/after, exactly 2 steps (ChatGPT storyboard → Google Flow video), viewer can repeat with their own photo in minutes. Her typical video gets ~1–5k, so this is a clear outlier.",
     "how_we_adapt": "'Two prompts' format for work: 'From messy meeting notes to a polished client recap — two prompts' (prompt 1 structures, prompt 2 rewrites in client voice). Show raw → result side by side.",
     "metric_note": "views from TikTok profile grid; typical ~1–5k",
-    "used_in": []
+    "used_in": [
+      "w48v2-d3-reel"
+    ]
   },
   {
     "id": "ref-20261123-04",
@@ -111,7 +117,9 @@
     "why_it_worked": "Provocative 'X killed Y' cover + nuanced caption ('MCPs aren't dead') + keyword DM for the repo; 1,874 likes, 2,037 comments, 1,870 shares.",
     "how_we_adapt": "Cover formula 'ChatGPT just killed your [boring task]' (e.g. weekly report). Inside: the honest nuance + 3-step workflow. Keep claims accurate.",
     "metric_note": "views from profile Reels tab",
-    "used_in": []
+    "used_in": [
+      "w48v2-d7-reel"
+    ]
   },
   {
     "id": "ref-20261123-07",
@@ -149,7 +157,9 @@
     "why_it_worked": "Mega cheat-sheet (100 short codes in one grid) = pure save/share bait: 13.7k likes and 5.6k shares on a 7.3k account whose reels average ~1–2k views. Comments are mostly 'Prompt' requests.",
     "how_we_adapt": "'50 ChatGPT commands for work' cheat-sheet carousel: one dense, readable grid per category (email, Excel, meetings, career), our brand colors, CTA 'save + comment WORK for the full PDF'.",
     "metric_note": "likes/shares visible on post; views not visible for carousels; ratio = likes/followers",
-    "used_in": []
+    "used_in": [
+      "w48v2-d2-carousel"
+    ]
   },
   {
     "id": "ref-20261123-09",
@@ -187,7 +197,9 @@
     "why_it_worked": "Big account noted only: 'What happens when you ask AI to…' experiment format did ~25–50× his recent 2–5k average.",
     "how_we_adapt": "Series 'What happens when you ask ChatGPT to…' — '…rewrite your resume like a recruiter', '…find the hidden fees in your contract'. Screen-record the chat.",
     "metric_note": "big account; ratio vs followers low, vs own recent typical ~25×",
-    "used_in": []
+    "used_in": [
+      "w48v2-d1-reel"
+    ]
   },
   {
     "id": "ref-20261123-11",
@@ -206,6 +218,8 @@
     "why_it_worked": "Big account noted only: 'stop saying X, say Y' contrast + 20.2k comments via comment-to-get mechanic.",
     "how_we_adapt": "'Stop typing X → type this' bad vs good prompt slides for work tasks.",
     "metric_note": "big account; likes 44,693 / comments 20,225 visible; outlier ratio not computed",
-    "used_in": []
+    "used_in": [
+      "w48v2-d5-carousel"
+    ]
   }
 ]
