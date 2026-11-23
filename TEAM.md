@@ -89,8 +89,20 @@ Media URL = `https://raw.githubusercontent.com/Makc9k/aiedge-media/main/<path>`.
    product note `obsidian/Etsy/Продукти/AI Edge Prompt Pack.md`; before that use "Free prompt pack coming soon").
 8. Check your own work: render contact sheets / preview frames and look at them before shipping. Fix overlaps and cut-off text.
 
+## Reference-driven production (owner's rule: references decide the format, templates only decide the colors)
+Templates/engine give **brand style only** (colors, fonts, safe zones). The **structure of every post comes from its reference**.
+1. Director: for each post, open the reference (`source_trend` → `references/library.json` → url) and write a `breakdown` in the plan:
+   `{"hook_seconds": 1.5, "hook_mechanic": "…", "shots": [{"t": "0-1.5", "what": "…", "text_on_screen": "…"}], "cut_rhythm": "cut every ~1 s",
+   "visual_device": "screen recording | split before/after | chat demo | meme caption | list reveal | face/hand + overlay", "payoff_at": "…", "cta_style": "…"}`.
+   Use `social-media-skills:viral-reverse-engineering` for the breakdown. If the reference can't be opened, pick another one — no breakdown, no post.
+2. Maker: rebuild **the same structure** (timing, number of shots, rhythm, where text sits, the visual device) with our own content and brand.
+   If the engine lacks that device (e.g. meme caption over screen recording, fog/blur transition, zoom-punch on a word) — add a new scene to `tools/motion/` first.
+   Real screen recordings are allowed and preferred when the reference uses them: record our own pages (Mission Control site, Gumroad pages) with Playwright screencast (see `tools/motion/record_site.py`).
+3. Variety check: in one week no two posts may share the same `visual_device` + layout. The Judge flags violations.
+4. In `manifest.json` each item gets `"reference_match": "what we copied structurally / what we changed"`.
+
 ## Plugins & connectors — who uses what
-Use a tool only if it is actually available in your session (check first); otherwise fall back to web search / the
+Verified 2026-11-23 (status/plugin_check.md): scheduled runs DO have humanizer, social-media-skills, marketing, buzzfy, virlo skills and apify/buzzfy/Metricool tools (no Virlo MCP server yet). Use a tool only if it is actually available in your session (check first); otherwise fall back to web search / the
 built-in browser and say so in your report. Always confirm Virlo/Apify credit cost limits: max ~1 paid Virlo run and
 max ~$0.50 of Apify per agent run unless the owner raised the budget in `obsidian/Etsy/Сторінки/Команда AI Edge.md`.
 
