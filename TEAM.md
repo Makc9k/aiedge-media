@@ -58,6 +58,18 @@ Media URL = `https://raw.githubusercontent.com/Makc9k/aiedge-media/main/<path>`.
    product note `obsidian/Etsy/Продукти/AI Edge Prompt Pack.md`; before that use "Free prompt pack coming soon").
 8. Check your own work: render contact sheets / preview frames and look at them before shipping. Fix overlaps and cut-off text.
 
+## Voice: sound like a person, not a bot
+If a **humanizer** skill is available in your session (e.g. `humanizer`, `humanize`, `humanize-ig`), run every caption,
+hook and slide text through it before shipping. Either way, follow these rules — the creative director and the poster
+both check them:
+- Short, concrete sentences. Contractions (you'll, don't). Talk to one person ("you").
+- One idea per post. Lead with the outcome the reader gets, not with how amazing AI is.
+- Banned words/phrases: delve, unlock, unleash, elevate, game-changer, revolutionize, supercharge, seamless, robust,
+  leverage, "in today's fast-paced world", "it's not just X, it's Y", "let's dive in", "here's the thing", "the best part?".
+- No rule-of-three padding, no stacked adjectives, max 1 emoji per caption (0 is fine), max 1 em dash per caption.
+- No fake urgency, no "everyone is talking about", no claims you can't show in the demo.
+- Read it out loud test: if a friend wouldn't text it like that, rewrite it.
+
 ## Tools in this repo
 - `tools/motion/engine.py` — animation engine (Canvas, easing, cards, chat window, bubbles, check/cross, underline, render()).
 - `tools/motion/launch_v2.py` — reference scenes: `s1` chat/email demo, `s2` chaos→plan sorting, `s3` weak→strong rewrite,
