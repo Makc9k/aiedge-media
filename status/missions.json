@@ -1,0 +1,12 @@
+{
+  "active": {
+    "title": "Rebuild week 24–30 Nov: bright, personal-result content",
+    "why": "Owner rejected the old week as too plain. The team replans and remakes everything.",
+    "steps": [
+      {"emoji": "🎬", "name": "Creative Director", "match": "Директор", "at": "2026-11-23 19:20", "what": "New 7-day plan, each post built on a real reference"},
+      {"emoji": "🎨", "name": "Content Maker", "match": "Мейкер", "at": "2026-11-23 20:15", "what": "Makes all Reels, carousels and stories"},
+      {"emoji": "🧠", "name": "Quality review", "match": "Review", "at": "2026-11-23 21:50", "what": "Checks the videos before anything goes live"},
+      {"emoji": "📅", "name": "Poster", "match": "Постер", "at": "2026-11-23 22:15", "what": "Swaps old posts for new ones in the schedule"}
+    ]
+  }
+}

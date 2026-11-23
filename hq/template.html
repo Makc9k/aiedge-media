@@ -77,6 +77,16 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;font-family:"JetBrains Mo
 footer a{color:var(--cy)}
 @media (max-width:900px){.goal{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
 @media (max-width:560px){.goal{grid-template-columns:1fr}h1{font-size:22px}}
+.mission .mt{font-size:20px;font-weight:800;margin-bottom:4px}.mission .mw{color:var(--mut);font-size:13px;margin-bottom:16px}
+.msteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.mstep{border:1px solid #1E2A4A;border-radius:14px;padding:14px;position:relative;overflow:hidden}
+.mstep .e{font-size:26px}.mstep b{display:block;margin:6px 0 2px}.mstep .w{font-size:12px;color:var(--mut);min-height:32px}
+.mstep .s{margin-top:10px;font-family:'DejaVu Sans Mono',monospace;font-size:12px}
+.mstep.done{border-color:#34D39988}.mstep.done .s{color:#34D399}
+.mstep.run{border-color:#22D3EE;box-shadow:0 0 18px #22D3EE55}.mstep.run .s{color:#22D3EE}
+.mstep.run:after{content:"";position:absolute;left:-40%;top:0;height:3px;width:40%;background:#22D3EE;animation:scan 1.6s linear infinite}
+.mstep.bad{border-color:#F87171}.mstep.bad .s{color:#F87171}
+@keyframes scan{to{left:100%}}
 </style>
 </head>
 <body>
@@ -88,6 +98,8 @@ footer a{color:var(--cy)}
 
 <h2>Monthly goal</h2>
 <div class="panel goal" id="goal"></div>
+
+<div id="missionWrap" style="display:none"><h2>Current mission</h2><div class="panel mission" id="mission"></div></div>
 
 <h2>Pipeline</h2>
 <div class="panel pipe"><svg id="pipe" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMid meet"></svg></div>
@@ -174,7 +186,19 @@ function renderRefs(refs){
     <div class="meta"><span class="tag p">${r.platform}</span>${r.format&&r.format!==r.platform?`<span class="tag">${r.format}</span>`:""}<span class="tag">${(r.benefit_shown||'').replace(/_/g,' ')}</span>${r.used_in&&r.used_in.length?'<span class="tag" style="color:var(--ok)">used</span>':''}</div></a>`).join('');
 }
 
-function renderAll(d){renderGoal(d.goal);renderPipe(d.agents);const log=parseLog(d.log);renderAgents(d.agents,log);renderFeed(log);renderRefs(d.refs);
+function renderMission(m,log){const w=document.getElementById('missionWrap');if(!m||!m.active){w.style.display='none';return}w.style.display='';
+  const a=m.active;const el=document.getElementById('mission');
+  const draw=()=>{const now=kyivNow();const nowS=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+' '+now.toTimeString().slice(0,5);
+   el.innerHTML=`<div class="mt">${a.title}</div><div class="mw">${a.why}</div><div class="msteps">`+a.steps.map(s=>{
+    const hit=log.filter(e=>e.agent.includes(s.match)&&e.t>=s.at).pop();
+    let cls='',st;
+    if(hit){cls=hit.st.includes('❌')?'bad':'done';st=(cls==='bad'?'✕ ':'✓ ')+hit.t.slice(11)+' · '+hit.what}
+    else if(nowS>=s.at){cls='run';st='● working now…'}
+    else{const [d,t]=s.at.split(' ');const [Y,M,D]=d.split('-').map(Number);const [h,mi]=t.split(':').map(Number);st='starts in '+dur(new Date(Y,M-1,D,h,mi)-now)}
+    return `<div class="mstep ${cls}"><div class="e">${s.emoji}</div><b>${s.name}</b><div class="w">${s.what}</div><div class="s">${st}</div></div>`}).join('')+'</div>'};
+  draw();clearInterval(window._mt);window._mt=setInterval(draw,1000);}
+
+function renderAll(d){renderGoal(d.goal);renderPipe(d.agents);const log=parseLog(d.log);renderAgents(d.agents,log);renderFeed(log);renderRefs(d.refs);renderMission(d.missions,log);
   document.getElementById('upd').textContent='data '+(d.live?'live':'snapshot '+SNAP.built);}
 
 renderAll(SNAP);
@@ -182,7 +206,8 @@ async function live(){ if(!BASE) return; try{
   const bust='?t='+Date.now(); const [log,refs,agents,goal]=await Promise.all([
     fetch(BASE+'status/log.md'+bust).then(r=>r.text()),fetch(BASE+'references/library.json'+bust).then(r=>r.json()),
     fetch(BASE+'status/agents.json'+bust).then(r=>r.json()),fetch(BASE+'status/goal.json'+bust).then(r=>r.json())]);
-  renderAll({log,refs,agents,goal,live:true}); document.getElementById('src').textContent='live';
+  const missions=await fetch(BASE+'status/missions.json'+bust).then(r=>r.json()).catch(()=>null);
+  renderAll({log,refs,agents,goal,missions,live:true}); document.getElementById('src').textContent='live';
  }catch(e){document.getElementById('src').textContent='snapshot'} }
 live(); setInterval(live,120000);
 </script>

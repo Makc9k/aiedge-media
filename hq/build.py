@@ -6,6 +6,7 @@ snap = {
     "refs": json.load(open(os.path.join(R, "references/library.json"), encoding="utf-8")),
     "agents": json.load(open(os.path.join(R, "status/agents.json"), encoding="utf-8")),
     "goal": json.load(open(os.path.join(R, "status/goal.json"), encoding="utf-8")),
+    "missions": json.load(open(os.path.join(R, "status/missions.json"), encoding="utf-8")),
     "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
 }
 t = open(os.path.join(R, "hq/template.html"), encoding="utf-8").read()

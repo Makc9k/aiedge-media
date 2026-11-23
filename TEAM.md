@@ -42,6 +42,7 @@ Every agent, at the end of each run, appends one line to `status/log.md` in this
 `| YYYY-MM-DD HH:MM | <agent> | ✅/⚠️/❌ | what was done (1 line) | link to output |`
 
 ## Mission Control site (`hq/`)
+One-off missions (extra runs ordered by the owner) are listed in `status/missions.json` and shown as «Current mission» with live status. Your log line marks your step done (matched by your agent name, time ≥ step start). The last agent of a mission sets `"active": null` when the mission is complete.
 Public dashboard at https://makc9k.github.io/aiedge-media/hq/ reads `status/log.md`, `status/agents.json`, `status/goal.json` and `references/library.json` live.
 The 📊 Analyst appends a progress entry to `status/goal.json` every Sunday (same numbers as «🎯 Ціль місяця»): `{"date","ig","threads","followers_gain","leads","sales"}`. If you add an agent, add it to `status/agents.json`.
 
