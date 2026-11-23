@@ -1,0 +1,9 @@
+[
+ {"id":"scout","emoji":"🔎","name":"Scout","ua":"Скаут референсів","role":"Finds small creators whose posts blew up and saves them as references","cron":{"m":37,"h":10,"dow":"*"},"schedule":"Daily 10:37","color":"#22D3EE","match":"Скаут"},
+ {"id":"analyst","emoji":"📊","name":"Analyst","ua":"Аналітик","role":"Reads the numbers, tracks the monthly goal, tells the director what to change","cron":{"m":23,"h":12,"dow":0},"schedule":"Sun 12:23","color":"#A78BFA","match":"Аналітик"},
+ {"id":"director","emoji":"🎬","name":"Creative Director","ua":"Креативний директор","role":"Turns references + data into a weekly plan of 7 posts and 7 stories","cron":{"m":7,"h":13,"dow":0},"schedule":"Sun 13:07","color":"#F472B6","match":"Директор"},
+ {"id":"maker","emoji":"🎨","name":"Content Maker","ua":"Контент-мейкер","role":"Designs carousels, animated demos and Reels with our motion engine","cron":{"m":17,"h":14,"dow":0},"schedule":"Sun 14:17","color":"#FBBF24","match":"Мейкер"},
+ {"id":"poster","emoji":"📅","name":"Poster","ua":"Постер","role":"Schedules everything to Instagram + Threads through Metricool","cron":{"m":43,"h":15,"dow":0},"schedule":"Sun 15:43","color":"#34D399","match":"Постер"},
+ {"id":"judge","emoji":"⚖️","name":"Judge","ua":"Суддя","role":"Fact-checks every agent: numbers, links, claims. Nothing fake gets through","cron":{"m":47,"h":19,"dow":"*"},"schedule":"Daily 19:47","color":"#F87171","match":"Суддя"},
+ {"id":"niche","emoji":"🧭","name":"Niche Scout","ua":"Розвідник ніш","role":"Hunts for the next digital product worth building","cron":{"m":44,"h":11,"dow":0},"schedule":"Sun 11:44","color":"#60A5FA","match":"Розвідник"}
+]

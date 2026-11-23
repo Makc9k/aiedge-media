@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Edge · Mission Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070B18;--card:#0E1530;--line:#1E2A4A;--cy:#22D3EE;--vio:#A78BFA;--mut:#8FA3C8;--txt:#E8F1FF;--ok:#34D399;--warn:#FBBF24;--bad:#F87171}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(#0C1330 1px,transparent 1px),linear-gradient(90deg,#0C1330 1px,transparent 1px);background-size:44px 44px;z-index:-2;animation:drift 40s linear infinite}
+body::after{content:"";position:fixed;inset:-20%;background:radial-gradient(600px 400px at 20% 10%,rgba(34,211,238,.12),transparent 60%),radial-gradient(700px 500px at 85% 30%,rgba(167,139,250,.10),transparent 60%);z-index:-1}
+@keyframes drift{to{background-position:44px 44px}}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 22px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{white-space:nowrap;letter-spacing:-1px;width:52px;height:52px;border-radius:50%;border:2px solid var(--cy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 0 24px rgba(34,211,238,.4)}
+.logo span{color:var(--cy)}
+h1{font-size:28px;margin:0;font-weight:900;letter-spacing:-.02em}
+h1 small{display:block;font-size:12px;letter-spacing:.3em;color:var(--mut);font-weight:600;margin-top:2px}
+.live{display:flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mut)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+h2{font-size:13px;letter-spacing:.25em;color:var(--mut);font-weight:700;margin:38px 0 14px;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.panel{background:linear-gradient(180deg,rgba(14,21,48,.9),rgba(10,15,34,.9));border:1px solid var(--line);border-radius:20px;padding:20px}
+/* goal */
+.goal{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:16px}
+.goal .intro b{font-size:44px;font-weight:900;display:block;line-height:1}
+.goal .intro p{color:var(--mut);margin:8px 0 0;font-size:14px;line-height:1.5}
+.ring{display:flex;align-items:center;gap:16px}
+.ring svg{width:110px;height:110px;transform:rotate(-90deg)}
+.ring .v{font-size:30px;font-weight:900}
+.ring .l{color:var(--mut);font-size:13px}
+.ring .m{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mut);margin-top:6px}
+/* pipeline */
+.pipe{position:relative;height:150px}
+.pipe svg{width:100%;height:100%}
+.node text{font-family:Inter;font-weight:800;font-size:13px;fill:var(--txt)}
+/* agents */
+.agents{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:16px}
+.agent{position:relative;overflow:hidden}
+.agent .top{display:flex;gap:14px;align-items:center}
+.av{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;position:relative;flex:none}
+.av::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px dashed var(--c);animation:spin 9s linear infinite;opacity:.8}
+@keyframes spin{to{transform:rotate(360deg)}}
+.agent h3{margin:0;font-size:18px;font-weight:800}
+.agent .ua{color:var(--mut);font-size:12px}
+.agent .role{color:#B9C7E3;font-size:13.5px;line-height:1.45;margin:14px 0 12px;min-height:40px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px}
+.pill{font-family:"JetBrains Mono",monospace;font-size:11.5px;padding:4px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
+.pill.ok{color:var(--ok);border-color:rgba(52,211,153,.4)}.pill.warn{color:var(--warn);border-color:rgba(251,191,36,.4)}.pill.bad{color:var(--bad);border-color:rgba(248,113,113,.4)}
+.last{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:#C9D6EE;line-height:1.45;min-height:54px}
+.last i{color:var(--mut);font-style:normal;font-family:"JetBrains Mono",monospace;font-size:11px;display:block;margin-bottom:4px}
+.cd{font-family:"JetBrains Mono",monospace;color:var(--c);font-weight:600}
+.agent .bar{position:absolute;left:0;top:0;height:3px;background:var(--c);box-shadow:0 0 14px var(--c)}
+/* feed + refs */
+.cols{display:grid;grid-template-columns:1fr 1.3fr;gap:16px}
+.feed{font-family:"JetBrains Mono",monospace;font-size:12.5px;max-height:520px;overflow:auto}
+.feed .e{display:grid;grid-template-columns:112px 1fr;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);animation:in .5s both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.feed .t{color:var(--mut)}
+.feed .w{color:#D7E4FA}.feed .w b{color:var(--cy);font-weight:600}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;max-height:520px;overflow:auto;padding-right:4px}
+.ref{background:#0B1230;border:1px solid var(--line);border-radius:14px;padding:14px;text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s}
+.ref:hover{transform:translateY(-3px);border-color:var(--cy)}
+.ref .x{font-size:30px;font-weight:900;color:var(--cy);line-height:1}
+.ref .x small{font-size:12px;color:var(--mut);font-weight:600;margin-left:6px}
+.ref .who{font-weight:700;margin:8px 0 4px;font-size:14px}
+.ref .h{color:#B9C7E3;font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ref .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:10.5px;font-family:"JetBrains Mono",monospace;padding:3px 8px;border-radius:99px;background:#121C40;color:var(--mut)}
+.tag.p{color:var(--vio)}
+footer{margin-top:40px;color:var(--mut);font-size:12px;font-family:"JetBrains Mono",monospace;text-align:center}
+footer a{color:var(--cy)}
+@media (max-width:900px){.goal{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+@media (max-width:560px){.goal{grid-template-columns:1fr}h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">A<span>E</span></div><div><h1>AI EDGE <span style="color:var(--cy)">MISSION CONTROL</span><small>7 AI AGENTS · ONE GOAL · RUNNING 24/7</small></h1></div></div>
+  <div class="live"><span class="dot"></span><span id="clock">--:--:--</span>&nbsp;KYIV · <span id="src">snapshot</span></div>
+</header>
+
+<h2>Monthly goal</h2>
+<div class="panel goal" id="goal"></div>
+
+<h2>Pipeline</h2>
+<div class="panel pipe"><svg id="pipe" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMid meet"></svg></div>
+
+<h2>The team</h2>
+<div class="agents" id="agents"></div>
+
+<div class="cols">
+  <div><h2>Live log</h2><div class="panel feed" id="feed"></div></div>
+  <div><h2>Reference wall · small creators that blew up</h2><div class="panel"><div class="refs" id="refs"></div></div></div>
+</div>
+
+<footer>Data: <a href="https://github.com/Makc9k/aiedge-media">github.com/Makc9k/aiedge-media</a> · updated by the agents themselves · <span id="upd"></span></footer>
+</div>
+
+<script id="snapshot" type="application/json">{"log": "# Team log\n\n| time (Kyiv) | agent | status | what | link |\n|---|---|---|---|---|\n| 2026-11-23 17:40 | setup | ✅ | references library + control panel created | TEAM.md |\n| 2026-11-23 17:55 | 🔎 Скаут | ⚠️ | 9 малих аутлаєрів + 2 великі (IG/TikTok); Obsidian-пульт не оновлено — папка не підключена | references/2026-11-23.md |\n", "refs": [{"id": "ref-20261123-01", "date_found": "2026-11-23", "platform": "tiktok", "url": "https://www.tiktok.com/@tech.bit0/video/7710229952867683602", "creator": "@tech.bit0", "followers": 17200, "metric": "views", "value": 611700, "outlier_ratio": 35.6, "posted": "2026-11-20", "format": "tiktok", "hook": "Stop guessing what looks good on you: shortcut prompts that tell you your best glasses, clothing colors and haircut from one selfie", "benefit_shown": "before_after", "why_it_worked": "Personal, instantly testable payoff (your own face), shopping/salon use case, 'save for later' framing; prompts shown on screen so viewers save instead of comment.", "how_we_adapt": "Carousel 'Stop guessing at work': 3 prompts that read your resume/LinkedIn photo/email tone and tell you what to fix (best headline, best tone, best photo crop). Before/after slides + copy-paste prompt on the last slide.", "metric_note": "views from TikTok profile grid; creator's typical video ~5–50k", "used_in": []}, {"id": "ref-20261123-02", "date_found": "2026-11-23", "platform": "tiktok", "url": "https://www.tiktok.com/@tech.bit0/video/7709820632644488455", "creator": "@tech.bit0", "followers": 17200, "metric": "views", "value": 192700, "outlier_ratio": 11.2, "posted": "2026-11-19", "format": "tiktok", "hook": "What if you could understand a book faster and actually remember it? Prompt shortcuts that turn any book into mind maps, flashcards and summaries", "benefit_shown": "list", "why_it_worked": "Learning/self-improvement promise with tangible outputs (flashcards, mind map); one input → five formats feels like a cheat code.", "how_we_adapt": "Reel/carousel 'Turn any 40-page report into 5 things your boss actually reads': exec summary, 1-slide visual, FAQ, action list, flashcards for the meeting. One prompt per output.", "metric_note": "views from TikTok profile grid", "used_in": []}, {"id": "ref-20261123-03", "date_found": "2026-11-23", "platform": "tiktok", "url": "https://www.tiktok.com/@cindiezhu/video/7708521413275045140", "creator": "@cindiezhu", "followers": 35400, "metric": "views", "value": 328400, "outlier_ratio": 9.3, "posted": "2026-11-15", "format": "tiktok", "hook": "From one ordinary photo against a wall to a moody cinematic street edit — two prompts", "benefit_shown": "before_after", "why_it_worked": "Strong visual before/after, exactly 2 steps (ChatGPT storyboard → Google Flow video), viewer can repeat with their own photo in minutes. Her typical video gets ~1–5k, so this is a clear outlier.", "how_we_adapt": "'Two prompts' format for work: 'From messy meeting notes to a polished client recap — two prompts' (prompt 1 structures, prompt 2 rewrites in client voice). Show raw → result side by side.", "metric_note": "views from TikTok profile grid; typical ~1–5k", "used_in": []}, {"id": "ref-20261123-04", "date_found": "2026-11-23", "platform": "tiktok", "url": "https://www.tiktok.com/@cindiezhu/video/7709417451133406470", "creator": "@cindiezhu", "followers": 35400, "metric": "views", "value": 88400, "outlier_ratio": 2.5, "posted": "2026-11-18", "format": "tiktok", "hook": "All six of these video edits came from typing one code into Claude", "benefit_shown": "chat_demo", "why_it_worked": "'Codes' framing (/tier-list, /captions, /freeze-frame) makes a complex MCP setup feel like a cheat sheet; ~30–60× her typical views on that day.", "how_we_adapt": "Carousel 'Slash-codes for your workday': /tldr, /reply-polite, /meeting-agenda, /excel-formula, /prioritize — each slide = code + the hidden prompt it expands to (we teach people to save these as custom instructions/snippets).", "metric_note": "views from TikTok profile grid; ratio vs followers, ~30× vs her typical", "used_in": []}, {"id": "ref-20261123-05", "date_found": "2026-11-23", "platform": "instagram", "url": "https://www.instagram.com/reel/Df5C8OFvMxo/", "creator": "@darveloff", "followers": 15100, "metric": "views", "value": 215000, "outlier_ratio": 14.2, "posted": "2026-11-18", "format": "reel", "hook": "Comment a keyword and I'll DM you the link — the biggest paid AI plan may be free for 6 months if you contribute to open source", "benefit_shown": "other", "why_it_worked": "Money-saving news + keyword-to-DM CTA: ~21.2k comments, ~3k shares, ~3.1k likes visible. Claim is the creator's — not verified by us.", "how_we_adapt": "'Free AI perks most people miss' carousel (only officially verified offers: student/education plans, free tiers) + 'Comment FREE' CTA that sends Starter 10. Verify each perk on the official page before posting.", "metric_note": "views from profile Reels tab; likes 3,144 / comments ~21.2k / shares 3,044 visible; typical reel ~10k", "used_in": []}, {"id": "ref-20261123-06", "date_found": "2026-11-23", "platform": "instagram", "url": "https://www.instagram.com/p/Df-OYxupdK2/", "creator": "@darveloff", "followers": 15100, "metric": "views", "value": 137000, "outlier_ratio": 9.1, "posted": "2026-11-20", "format": "reel", "hook": "'Claude killed MCPs' — a free GitHub tool that lets the agent control almost any app", "benefit_shown": "other", "why_it_worked": "Provocative 'X killed Y' cover + nuanced caption ('MCPs aren't dead') + keyword DM for the repo; 1,874 likes, 2,037 comments, 1,870 shares.", "how_we_adapt": "Cover formula 'ChatGPT just killed your [boring task]' (e.g. weekly report). Inside: the honest nuance + 3-step workflow. Keep claims accurate.", "metric_note": "views from profile Reels tab", "used_in": []}, {"id": "ref-20261123-07", "date_found": "2026-11-23", "platform": "instagram", "url": "https://www.instagram.com/p/DfmguRaOWx1/", "creator": "@valentumlabs", "followers": 24000, "metric": "views", "value": 149000, "outlier_ratio": 6.2, "posted": "2026-11-11", "format": "reel", "hook": "Save these 7 ChatGPT prompts — I was stuck at 200 views per reel until I handed my Instagram to ChatGPT", "benefit_shown": "story", "why_it_worked": "Personal transformation story (quit tech job, 200 views → 1M) + full prompts in caption + 'Comment SETUP' DM; 998 comments, 825 shares.", "how_we_adapt": "Story-led reel: 'I was spending 2 hours a day on email until I gave ChatGPT these 5 prompts' — numbers only if true for us; prompts in caption, 'Comment PROMPTS' → Starter 10.", "metric_note": "views from profile Reels tab; typical reel ~8–80k", "used_in": []}, {"id": "ref-20261123-08", "date_found": "2026-11-23", "platform": "instagram", "url": "https://www.instagram.com/p/Dfl4BwOqqyh/", "creator": "@isha.bytes", "followers": 7300, "metric": "likes", "value": 13719, "outlier_ratio": 1.9, "posted": "2026-11-11", "format": "carousel", "hook": "Stop scrolling — 100 ChatGPT photo-editing commands you need to save (one dense cheat-sheet image)", "benefit_shown": "list", "why_it_worked": "Mega cheat-sheet (100 short codes in one grid) = pure save/share bait: 13.7k likes and 5.6k shares on a 7.3k account whose reels average ~1–2k views. Comments are mostly 'Prompt' requests.", "how_we_adapt": "'50 ChatGPT commands for work' cheat-sheet carousel: one dense, readable grid per category (email, Excel, meetings, career), our brand colors, CTA 'save + comment WORK for the full PDF'.", "metric_note": "likes/shares visible on post; views not visible for carousels; ratio = likes/followers", "used_in": []}, {"id": "ref-20261123-09", "date_found": "2026-11-23", "platform": "tiktok", "url": "https://www.tiktok.com/@george.automates/video/7707737683803737365", "creator": "@george.automates", "followers": 11500, "metric": "views", "value": 29300, "outlier_ratio": 2.5, "posted": "2026-11-13", "format": "tiktok", "hook": "10 YouTube videos to master Claude in one weekend — save this", "benefit_shown": "list", "why_it_worked": "Curated free-learning list + time promise ('one weekend'); ~10× his typical 1–4k views. Same week his 'Which AI myth do you still believe' got 26.9k.", "how_we_adapt": "'Learn AI for your job in one weekend: 7 free official courses' carousel (only official sources: OpenAI Academy, Google, Anthropic), save CTA.", "metric_note": "views from TikTok profile grid; ~10× typical", "used_in": []}, {"id": "ref-20261123-10", "date_found": "2026-11-23", "platform": "tiktok", "url": "https://www.tiktok.com/@maverickgpt/video/7708456356520496414", "creator": "@maverickgpt (BIG, 639k)", "followers": 639400, "metric": "views", "value": 101900, "outlier_ratio": 0.16, "posted": "2026-11-15", "format": "tiktok", "hook": "What happens when you ask Claude to make your Wi-Fi 10 times faster?", "benefit_shown": "chat_demo", "why_it_worked": "Big account noted only: 'What happens when you ask AI to…' experiment format did ~25–50× his recent 2–5k average.", "how_we_adapt": "Series 'What happens when you ask ChatGPT to…' — '…rewrite your resume like a recruiter', '…find the hidden fees in your contract'. Screen-record the chat.", "metric_note": "big account; ratio vs followers low, vs own recent typical ~25×", "used_in": []}, {"id": "ref-20261123-11", "date_found": "2026-11-23", "platform": "instagram", "url": "https://www.instagram.com/p/Df2mtKeFl85/", "creator": "@longliveai (BIG, 1M)", "followers": 1000000, "metric": "likes", "value": 44693, "outlier_ratio": null, "posted": "2026-11-18", "format": "carousel", "hook": "Stop telling ChatGPT 'analyze this' or 'give me ideas' — 10 prompts that make it a thinking partner", "benefit_shown": "comparison", "why_it_worked": "Big account noted only: 'stop saying X, say Y' contrast + 20.2k comments via comment-to-get mechanic.", "how_we_adapt": "'Stop typing X → type this' bad vs good prompt slides for work tasks.", "metric_note": "big account; likes 44,693 / comments 20,225 visible; outlier ratio not computed", "used_in": []}], "agents": [{"id": "scout", "emoji": "🔎", "name": "Scout", "ua": "Скаут референсів", "role": "Finds small creators whose posts blew up and saves them as references", "cron": {"m": 37, "h": 10, "dow": "*"}, "schedule": "Daily 10:37", "color": "#22D3EE", "match": "Скаут"}, {"id": "analyst", "emoji": "📊", "name": "Analyst", "ua": "Аналітик", "role": "Reads the numbers, tracks the monthly goal, tells the director what to change", "cron": {"m": 23, "h": 12, "dow": 0}, "schedule": "Sun 12:23", "color": "#A78BFA", "match": "Аналітик"}, {"id": "director", "emoji": "🎬", "name": "Creative Director", "ua": "Креативний директор", "role": "Turns references + data into a weekly plan of 7 posts and 7 stories", "cron": {"m": 7, "h": 13, "dow": 0}, "schedule": "Sun 13:07", "color": "#F472B6", "match": "Директор"}, {"id": "maker", "emoji": "🎨", "name": "Content Maker", "ua": "Контент-мейкер", "role": "Designs carousels, animated demos and Reels with our motion engine", "cron": {"m": 17, "h": 14, "dow": 0}, "schedule": "Sun 14:17", "color": "#FBBF24", "match": "Мейкер"}, {"id": "poster", "emoji": "📅", "name": "Poster", "ua": "Постер", "role": "Schedules everything to Instagram + Threads through Metricool", "cron": {"m": 43, "h": 15, "dow": 0}, "schedule": "Sun 15:43", "color": "#34D399", "match": "Постер"}, {"id": "judge", "emoji": "⚖️", "name": "Judge", "ua": "Суддя", "role": "Fact-checks every agent: numbers, links, claims. Nothing fake gets through", "cron": {"m": 47, "h": 19, "dow": "*"}, "schedule": "Daily 19:47", "color": "#F87171", "match": "Суддя"}, {"id": "niche", "emoji": "🧭", "name": "Niche Scout", "ua": "Розвідник ніш", "role": "Hunts for the next digital product worth building", "cron": {"m": 44, "h": 11, "dow": 0}, "schedule": "Sun 11:44", "color": "#60A5FA", "match": "Розвідник"}], "goal": {"start": "2026-11-23", "deadline": "2026-12-23", "targets": {"followers": 100, "leads": 150, "sales": 10}, "milestones": [{"week": 1, "until": "2026-11-30", "followers": 20, "leads": 25, "sales": 1}, {"week": 2, "until": "2026-12-07", "followers": 45, "leads": 65, "sales": 3}, {"week": 3, "until": "2026-12-14", "followers": 70, "leads": 105, "sales": 6}, {"week": 4, "until": "2026-12-23", "followers": 100, "leads": 150, "sales": 10}], "progress": [{"date": "2026-11-23", "ig": 1465, "threads": 264, "followers_gain": 0, "leads": 0, "sales": 0}]}, "built": "2026-11-23 16:20 UTC"}</script>
+<script>
+const SNAP = JSON.parse(document.getElementById('snapshot').textContent);
+const BASE = location.hostname.endsWith('github.io') ? '../' : null;
+const fmt = n => n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(n>=1e4?0:1)+'K':String(n);
+
+function kyivNow(){return new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Kyiv'}))}
+setInterval(()=>{document.getElementById('clock').textContent=kyivNow().toTimeString().slice(0,8)},1000);
+
+function nextRun(c){ // c: {m,h,dow}
+  const now=kyivNow(); for(let d=0; d<8; d++){ const t=new Date(now); t.setDate(now.getDate()+d); t.setHours(c.h,c.m,0,0);
+    if(t>now && (c.dow==='*'||t.getDay()===c.dow)) return t-now; } return null;}
+function dur(ms){if(ms==null)return'—';const s=Math.floor(ms/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),ss=s%60;
+  return (d?d+'d ':'')+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')}
+
+function parseLog(md){return md.split('\n').filter(l=>/^\|\s*\d{4}-\d{2}-\d{2}/.test(l)).map(l=>{const c=l.split('|').slice(1,-1).map(s=>s.trim());return{t:c[0],agent:c[1],st:c[2],what:c[3],link:c[4]}})}
+
+function renderGoal(g){
+  const p=g.progress[g.progress.length-1]||{}; const T=g.targets;
+  const left=Math.max(0,Math.ceil((new Date(g.deadline)-kyivNow())/864e5));
+  const ring=(v,max,col,label,ms)=>{const r=46,C=2*Math.PI*r,k=Math.min(1,(v||0)/max);
+    return `<div class="ring"><svg viewBox="0 0 110 110"><circle cx="55" cy="55" r="${r}" stroke="#1E2A4A" stroke-width="10" fill="none"/><circle cx="55" cy="55" r="${r}" stroke="${col}" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-k)}" style="transition:stroke-dashoffset 1.5s;filter:drop-shadow(0 0 6px ${col})"/></svg>
+    <div><div class="v">${v||0}<span style="font-size:16px;color:var(--mut)"> / ${max}</span></div><div class="l">${label}</div><div class="m">${ms}</div></div></div>`};
+  const wk=g.milestones.find(m=>new Date(m.until)>=kyivNow())||g.milestones[g.milestones.length-1];
+  document.getElementById('goal').innerHTML=`<div class="intro"><b>${left} days</b><p>to reach <b style="font-size:14px;display:inline;color:var(--cy)">+${T.followers} followers</b> and <b style="font-size:14px;display:inline;color:var(--ok)">${T.sales} sales</b> on @aiedge.prompts. Deadline ${g.deadline}.</p></div>`+
+   ring(p.followers_gain,T.followers,'#22D3EE','new followers',`week ${wk.week} target: ${wk.followers}`)+
+   ring(p.leads,T.leads,'#A78BFA','free pack downloads',`week ${wk.week} target: ${wk.leads}`)+
+   ring(p.sales,T.sales,'#34D399','sales · Prompt Pack $9',`week ${wk.week} target: ${wk.sales}`);
+}
+
+function renderPipe(agents){
+  const order=['scout','analyst','director','maker','poster']; const svg=document.getElementById('pipe');
+  const xs=order.map((_,i)=>110+i*245); let h='';
+  h+=`<defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>`;
+  h+=`<path id="track" d="M${xs[0]} 75 L${xs[xs.length-1]} 75" stroke="url(#lg)" stroke-width="3" stroke-dasharray="6 8" opacity=".6"><animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1s" repeatCount="indefinite"/></path>`;
+  for(let k=0;k<4;k++) h+=`<circle cx="-99" r="5" fill="#22D3EE" style="filter:drop-shadow(0 0 6px #22D3EE)"><animateMotion dur="5s" begin="${k*1.25}s" repeatCount="indefinite" path="M${xs[0]} 75 L${xs[xs.length-1]} 75"/></circle>`;
+  order.forEach((id,i)=>{const a=agents.find(x=>x.id===id);
+    h+=`<g class="node"><circle cx="${xs[i]}" cy="75" r="34" fill="#0E1530" stroke="${a.color}" stroke-width="2.5"/><text x="${xs[i]}" y="84" text-anchor="middle" style="font-size:26px">${a.emoji}</text><text x="${xs[i]}" y="136" text-anchor="middle">${a.name}</text></g>`});
+  const j=agents.find(x=>x.id==='judge');
+  h+=`<g class="node"><text x="600" y="22" text-anchor="middle" style="fill:${j.color};font-size:12px;letter-spacing:.2em">⚖️ JUDGE CHECKS EVERY STEP</text></g>`;
+  svg.innerHTML=h;
+}
+
+function renderAgents(agents,log){
+  const el=document.getElementById('agents');
+  el.innerHTML=agents.map(a=>{const mine=log.filter(e=>e.agent.includes(a.match)); const last=mine[mine.length-1];
+    const cls=!last?'':last.st.includes('✅')?'ok':last.st.includes('⚠')?'warn':'bad';
+    const st=!last?'waiting for first run':last.st.includes('✅')?'✓ done':last.st.includes('⚠')?'! needs attention':'✕ failed';
+    return `<div class="panel agent" style="--c:${a.color}"><div class="bar" id="bar-${a.id}"></div>
+    <div class="top"><div class="av" style="background:radial-gradient(circle,${a.color}33,transparent 70%)">${a.emoji}</div><div><h3>${a.name}</h3><div class="ua">${a.ua} · ${a.schedule}</div></div></div>
+    <div class="role">${a.role}</div>
+    <div class="row"><span class="pill ${cls}">${st}</span><span>next run <span class="cd" id="cd-${a.id}">—</span></span></div>
+    <div class="last"><i>${last?last.t:'no runs yet'}</i>${last?last.what:'Scheduled. The first report will appear here.'}</div></div>`}).join('');
+  const tick=()=>agents.forEach(a=>{const ms=nextRun(a.cron);document.getElementById('cd-'+a.id).textContent=dur(ms);
+    const period=a.cron.dow==='*'?864e5:6048e5; document.getElementById('bar-'+a.id).style.width=(100*(1-Math.min(1,ms/period)))+'%'});
+  tick(); setInterval(tick,1000);
+}
+
+function renderFeed(log){
+  document.getElementById('feed').innerHTML=log.slice().reverse().map((e,i)=>`<div class="e" style="animation-delay:${i*.06}s"><span class="t">${e.t.slice(5)}</span><span class="w"><b>${e.agent}</b> ${e.st} ${e.what}</span></div>`).join('')||'<div class="e">No entries yet.</div>';
+}
+
+function renderRefs(refs){
+  refs=refs.slice().sort((a,b)=>(b.outlier_ratio||0)-(a.outlier_ratio||0));
+  document.getElementById('refs').innerHTML=refs.map(r=>`<a class="ref" href="${r.url}" target="_blank" rel="noopener">
+    <div class="x">${r.outlier_ratio?r.outlier_ratio.toFixed(0)+'×':'—'}<small>${r.value?fmt(r.value)+' '+(r.metric||''):'not visible'}</small></div>
+    <div class="who">${r.creator} <span style="color:var(--mut);font-weight:500">· ${r.followers?fmt(r.followers):'?'} followers</span></div>
+    <div class="h">${r.hook||''}</div>
+    <div class="meta"><span class="tag p">${r.platform}</span>${r.format&&r.format!==r.platform?`<span class="tag">${r.format}</span>`:""}<span class="tag">${(r.benefit_shown||'').replace(/_/g,' ')}</span>${r.used_in&&r.used_in.length?'<span class="tag" style="color:var(--ok)">used</span>':''}</div></a>`).join('');
+}
+
+function renderAll(d){renderGoal(d.goal);renderPipe(d.agents);const log=parseLog(d.log);renderAgents(d.agents,log);renderFeed(log);renderRefs(d.refs);
+  document.getElementById('upd').textContent='data '+(d.live?'live':'snapshot '+SNAP.built);}
+
+renderAll(SNAP);
+async function live(){ if(!BASE) return; try{
+  const bust='?t='+Date.now(); const [log,refs,agents,goal]=await Promise.all([
+    fetch(BASE+'status/log.md'+bust).then(r=>r.text()),fetch(BASE+'references/library.json'+bust).then(r=>r.json()),
+    fetch(BASE+'status/agents.json'+bust).then(r=>r.json()),fetch(BASE+'status/goal.json'+bust).then(r=>r.json())]);
+  renderAll({log,refs,agents,goal,live:true}); document.getElementById('src').textContent='live';
+ }catch(e){document.getElementById('src').textContent='snapshot'} }
+live(); setInterval(live,120000);
+</script>
+</body>
+</html>

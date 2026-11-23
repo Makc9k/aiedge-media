@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Edge · Mission Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070B18;--card:#0E1530;--line:#1E2A4A;--cy:#22D3EE;--vio:#A78BFA;--mut:#8FA3C8;--txt:#E8F1FF;--ok:#34D399;--warn:#FBBF24;--bad:#F87171}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(#0C1330 1px,transparent 1px),linear-gradient(90deg,#0C1330 1px,transparent 1px);background-size:44px 44px;z-index:-2;animation:drift 40s linear infinite}
+body::after{content:"";position:fixed;inset:-20%;background:radial-gradient(600px 400px at 20% 10%,rgba(34,211,238,.12),transparent 60%),radial-gradient(700px 500px at 85% 30%,rgba(167,139,250,.10),transparent 60%);z-index:-1}
+@keyframes drift{to{background-position:44px 44px}}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 22px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{white-space:nowrap;letter-spacing:-1px;width:52px;height:52px;border-radius:50%;border:2px solid var(--cy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;box-shadow:0 0 24px rgba(34,211,238,.4)}
+.logo span{color:var(--cy)}
+h1{font-size:28px;margin:0;font-weight:900;letter-spacing:-.02em}
+h1 small{display:block;font-size:12px;letter-spacing:.3em;color:var(--mut);font-weight:600;margin-top:2px}
+.live{display:flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mut)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+h2{font-size:13px;letter-spacing:.25em;color:var(--mut);font-weight:700;margin:38px 0 14px;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.panel{background:linear-gradient(180deg,rgba(14,21,48,.9),rgba(10,15,34,.9));border:1px solid var(--line);border-radius:20px;padding:20px}
+/* goal */
+.goal{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:16px}
+.goal .intro b{font-size:44px;font-weight:900;display:block;line-height:1}
+.goal .intro p{color:var(--mut);margin:8px 0 0;font-size:14px;line-height:1.5}
+.ring{display:flex;align-items:center;gap:16px}
+.ring svg{width:110px;height:110px;transform:rotate(-90deg)}
+.ring .v{font-size:30px;font-weight:900}
+.ring .l{color:var(--mut);font-size:13px}
+.ring .m{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mut);margin-top:6px}
+/* pipeline */
+.pipe{position:relative;height:150px}
+.pipe svg{width:100%;height:100%}
+.node text{font-family:Inter;font-weight:800;font-size:13px;fill:var(--txt)}
+/* agents */
+.agents{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:16px}
+.agent{position:relative;overflow:hidden}
+.agent .top{display:flex;gap:14px;align-items:center}
+.av{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;position:relative;flex:none}
+.av::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px dashed var(--c);animation:spin 9s linear infinite;opacity:.8}
+@keyframes spin{to{transform:rotate(360deg)}}
+.agent h3{margin:0;font-size:18px;font-weight:800}
+.agent .ua{color:var(--mut);font-size:12px}
+.agent .role{color:#B9C7E3;font-size:13.5px;line-height:1.45;margin:14px 0 12px;min-height:40px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px}
+.pill{font-family:"JetBrains Mono",monospace;font-size:11.5px;padding:4px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
+.pill.ok{color:var(--ok);border-color:rgba(52,211,153,.4)}.pill.warn{color:var(--warn);border-color:rgba(251,191,36,.4)}.pill.bad{color:var(--bad);border-color:rgba(248,113,113,.4)}
+.last{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:#C9D6EE;line-height:1.45;min-height:54px}
+.last i{color:var(--mut);font-style:normal;font-family:"JetBrains Mono",monospace;font-size:11px;display:block;margin-bottom:4px}
+.cd{font-family:"JetBrains Mono",monospace;color:var(--c);font-weight:600}
+.agent .bar{position:absolute;left:0;top:0;height:3px;background:var(--c);box-shadow:0 0 14px var(--c)}
+/* feed + refs */
+.cols{display:grid;grid-template-columns:1fr 1.3fr;gap:16px}
+.feed{font-family:"JetBrains Mono",monospace;font-size:12.5px;max-height:520px;overflow:auto}
+.feed .e{display:grid;grid-template-columns:112px 1fr;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);animation:in .5s both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.feed .t{color:var(--mut)}
+.feed .w{color:#D7E4FA}.feed .w b{color:var(--cy);font-weight:600}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;max-height:520px;overflow:auto;padding-right:4px}
+.ref{background:#0B1230;border:1px solid var(--line);border-radius:14px;padding:14px;text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s}
+.ref:hover{transform:translateY(-3px);border-color:var(--cy)}
+.ref .x{font-size:30px;font-weight:900;color:var(--cy);line-height:1}
+.ref .x small{font-size:12px;color:var(--mut);font-weight:600;margin-left:6px}
+.ref .who{font-weight:700;margin:8px 0 4px;font-size:14px}
+.ref .h{color:#B9C7E3;font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ref .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:10.5px;font-family:"JetBrains Mono",monospace;padding:3px 8px;border-radius:99px;background:#121C40;color:var(--mut)}
+.tag.p{color:var(--vio)}
+footer{margin-top:40px;color:var(--mut);font-size:12px;font-family:"JetBrains Mono",monospace;text-align:center}
+footer a{color:var(--cy)}
+@media (max-width:900px){.goal{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+@media (max-width:560px){.goal{grid-template-columns:1fr}h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">A<span>E</span></div><div><h1>AI EDGE <span style="color:var(--cy)">MISSION CONTROL</span><small>7 AI AGENTS · ONE GOAL · RUNNING 24/7</small></h1></div></div>
+  <div class="live"><span class="dot"></span><span id="clock">--:--:--</span>&nbsp;KYIV · <span id="src">snapshot</span></div>
+</header>
+
+<h2>Monthly goal</h2>
+<div class="panel goal" id="goal"></div>
+
+<h2>Pipeline</h2>
+<div class="panel pipe"><svg id="pipe" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMid meet"></svg></div>
+
+<h2>The team</h2>
+<div class="agents" id="agents"></div>
+
+<div class="cols">
+  <div><h2>Live log</h2><div class="panel feed" id="feed"></div></div>
+  <div><h2>Reference wall · small creators that blew up</h2><div class="panel"><div class="refs" id="refs"></div></div></div>
+</div>
+
+<footer>Data: <a href="https://github.com/Makc9k/aiedge-media">github.com/Makc9k/aiedge-media</a> · updated by the agents themselves · <span id="upd"></span></footer>
+</div>
+
+<script id="snapshot" type="application/json">__SNAPSHOT__</script>
+<script>
+const SNAP = JSON.parse(document.getElementById('snapshot').textContent);
+const BASE = location.hostname.endsWith('github.io') ? '../' : null;
+const fmt = n => n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(n>=1e4?0:1)+'K':String(n);
+
+function kyivNow(){return new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Kyiv'}))}
+setInterval(()=>{document.getElementById('clock').textContent=kyivNow().toTimeString().slice(0,8)},1000);
+
+function nextRun(c){ // c: {m,h,dow}
+  const now=kyivNow(); for(let d=0; d<8; d++){ const t=new Date(now); t.setDate(now.getDate()+d); t.setHours(c.h,c.m,0,0);
+    if(t>now && (c.dow==='*'||t.getDay()===c.dow)) return t-now; } return null;}
+function dur(ms){if(ms==null)return'—';const s=Math.floor(ms/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),ss=s%60;
+  return (d?d+'d ':'')+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')}
+
+function parseLog(md){return md.split('\n').filter(l=>/^\|\s*\d{4}-\d{2}-\d{2}/.test(l)).map(l=>{const c=l.split('|').slice(1,-1).map(s=>s.trim());return{t:c[0],agent:c[1],st:c[2],what:c[3],link:c[4]}})}
+
+function renderGoal(g){
+  const p=g.progress[g.progress.length-1]||{}; const T=g.targets;
+  const left=Math.max(0,Math.ceil((new Date(g.deadline)-kyivNow())/864e5));
+  const ring=(v,max,col,label,ms)=>{const r=46,C=2*Math.PI*r,k=Math.min(1,(v||0)/max);
+    return `<div class="ring"><svg viewBox="0 0 110 110"><circle cx="55" cy="55" r="${r}" stroke="#1E2A4A" stroke-width="10" fill="none"/><circle cx="55" cy="55" r="${r}" stroke="${col}" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-k)}" style="transition:stroke-dashoffset 1.5s;filter:drop-shadow(0 0 6px ${col})"/></svg>
+    <div><div class="v">${v||0}<span style="font-size:16px;color:var(--mut)"> / ${max}</span></div><div class="l">${label}</div><div class="m">${ms}</div></div></div>`};
+  const wk=g.milestones.find(m=>new Date(m.until)>=kyivNow())||g.milestones[g.milestones.length-1];
+  document.getElementById('goal').innerHTML=`<div class="intro"><b>${left} days</b><p>to reach <b style="font-size:14px;display:inline;color:var(--cy)">+${T.followers} followers</b> and <b style="font-size:14px;display:inline;color:var(--ok)">${T.sales} sales</b> on @aiedge.prompts. Deadline ${g.deadline}.</p></div>`+
+   ring(p.followers_gain,T.followers,'#22D3EE','new followers',`week ${wk.week} target: ${wk.followers}`)+
+   ring(p.leads,T.leads,'#A78BFA','free pack downloads',`week ${wk.week} target: ${wk.leads}`)+
+   ring(p.sales,T.sales,'#34D399','sales · Prompt Pack $9',`week ${wk.week} target: ${wk.sales}`);
+}
+
+function renderPipe(agents){
+  const order=['scout','analyst','director','maker','poster']; const svg=document.getElementById('pipe');
+  const xs=order.map((_,i)=>110+i*245); let h='';
+  h+=`<defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>`;
+  h+=`<path id="track" d="M${xs[0]} 75 L${xs[xs.length-1]} 75" stroke="url(#lg)" stroke-width="3" stroke-dasharray="6 8" opacity=".6"><animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1s" repeatCount="indefinite"/></path>`;
+  for(let k=0;k<4;k++) h+=`<circle cx="-99" r="5" fill="#22D3EE" style="filter:drop-shadow(0 0 6px #22D3EE)"><animateMotion dur="5s" begin="${k*1.25}s" repeatCount="indefinite" path="M${xs[0]} 75 L${xs[xs.length-1]} 75"/></circle>`;
+  order.forEach((id,i)=>{const a=agents.find(x=>x.id===id);
+    h+=`<g class="node"><circle cx="${xs[i]}" cy="75" r="34" fill="#0E1530" stroke="${a.color}" stroke-width="2.5"/><text x="${xs[i]}" y="84" text-anchor="middle" style="font-size:26px">${a.emoji}</text><text x="${xs[i]}" y="136" text-anchor="middle">${a.name}</text></g>`});
+  const j=agents.find(x=>x.id==='judge');
+  h+=`<g class="node"><text x="600" y="22" text-anchor="middle" style="fill:${j.color};font-size:12px;letter-spacing:.2em">⚖️ JUDGE CHECKS EVERY STEP</text></g>`;
+  svg.innerHTML=h;
+}
+
+function renderAgents(agents,log){
+  const el=document.getElementById('agents');
+  el.innerHTML=agents.map(a=>{const mine=log.filter(e=>e.agent.includes(a.match)); const last=mine[mine.length-1];
+    const cls=!last?'':last.st.includes('✅')?'ok':last.st.includes('⚠')?'warn':'bad';
+    const st=!last?'waiting for first run':last.st.includes('✅')?'✓ done':last.st.includes('⚠')?'! needs attention':'✕ failed';
+    return `<div class="panel agent" style="--c:${a.color}"><div class="bar" id="bar-${a.id}"></div>
+    <div class="top"><div class="av" style="background:radial-gradient(circle,${a.color}33,transparent 70%)">${a.emoji}</div><div><h3>${a.name}</h3><div class="ua">${a.ua} · ${a.schedule}</div></div></div>
+    <div class="role">${a.role}</div>
+    <div class="row"><span class="pill ${cls}">${st}</span><span>next run <span class="cd" id="cd-${a.id}">—</span></span></div>
+    <div class="last"><i>${last?last.t:'no runs yet'}</i>${last?last.what:'Scheduled. The first report will appear here.'}</div></div>`}).join('');
+  const tick=()=>agents.forEach(a=>{const ms=nextRun(a.cron);document.getElementById('cd-'+a.id).textContent=dur(ms);
+    const period=a.cron.dow==='*'?864e5:6048e5; document.getElementById('bar-'+a.id).style.width=(100*(1-Math.min(1,ms/period)))+'%'});
+  tick(); setInterval(tick,1000);
+}
+
+function renderFeed(log){
+  document.getElementById('feed').innerHTML=log.slice().reverse().map((e,i)=>`<div class="e" style="animation-delay:${i*.06}s"><span class="t">${e.t.slice(5)}</span><span class="w"><b>${e.agent}</b> ${e.st} ${e.what}</span></div>`).join('')||'<div class="e">No entries yet.</div>';
+}
+
+function renderRefs(refs){
+  refs=refs.slice().sort((a,b)=>(b.outlier_ratio||0)-(a.outlier_ratio||0));
+  document.getElementById('refs').innerHTML=refs.map(r=>`<a class="ref" href="${r.url}" target="_blank" rel="noopener">
+    <div class="x">${r.outlier_ratio?r.outlier_ratio.toFixed(0)+'×':'—'}<small>${r.value?fmt(r.value)+' '+(r.metric||''):'not visible'}</small></div>
+    <div class="who">${r.creator} <span style="color:var(--mut);font-weight:500">· ${r.followers?fmt(r.followers):'?'} followers</span></div>
+    <div class="h">${r.hook||''}</div>
+    <div class="meta"><span class="tag p">${r.platform}</span>${r.format&&r.format!==r.platform?`<span class="tag">${r.format}</span>`:""}<span class="tag">${(r.benefit_shown||'').replace(/_/g,' ')}</span>${r.used_in&&r.used_in.length?'<span class="tag" style="color:var(--ok)">used</span>':''}</div></a>`).join('');
+}
+
+function renderAll(d){renderGoal(d.goal);renderPipe(d.agents);const log=parseLog(d.log);renderAgents(d.agents,log);renderFeed(log);renderRefs(d.refs);
+  document.getElementById('upd').textContent='data '+(d.live?'live':'snapshot '+SNAP.built);}
+
+renderAll(SNAP);
+async function live(){ if(!BASE) return; try{
+  const bust='?t='+Date.now(); const [log,refs,agents,goal]=await Promise.all([
+    fetch(BASE+'status/log.md'+bust).then(r=>r.text()),fetch(BASE+'references/library.json'+bust).then(r=>r.json()),
+    fetch(BASE+'status/agents.json'+bust).then(r=>r.json()),fetch(BASE+'status/goal.json'+bust).then(r=>r.json())]);
+  renderAll({log,refs,agents,goal,live:true}); document.getElementById('src').textContent='live';
+ }catch(e){document.getElementById('src').textContent='snapshot'} }
+live(); setInterval(live,120000);
+</script>
+</body>
+</html>

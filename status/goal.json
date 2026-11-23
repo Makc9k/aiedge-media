@@ -1,0 +1,4 @@
+{"start":"2026-11-23","deadline":"2026-12-23",
+ "targets":{"followers":100,"leads":150,"sales":10},
+ "milestones":[{"week":1,"until":"2026-11-30","followers":20,"leads":25,"sales":1},{"week":2,"until":"2026-12-07","followers":45,"leads":65,"sales":3},{"week":3,"until":"2026-12-14","followers":70,"leads":105,"sales":6},{"week":4,"until":"2026-12-23","followers":100,"leads":150,"sales":10}],
+ "progress":[{"date":"2026-11-23","ig":1465,"threads":264,"followers_gain":0,"leads":0,"sales":0}]}
