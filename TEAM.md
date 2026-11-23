@@ -46,7 +46,7 @@ Public dashboard at https://makc9k.github.io/aiedge-media/hq/ reads `status/log.
 The 📊 Analyst appends a progress entry to `status/goal.json` every Sunday (same numbers as «🎯 Ціль місяця»): `{"date","ig","threads","followers_gain","leads","sales"}`. If you add an agent, add it to `status/agents.json`.
 
 **Director: mandatory items for week 2026-w49** (owner's request):
-1. Reel «I built 7 AI agents that run my Instagram»: screen recording of the live site (pipeline animation → agent cards with countdowns → reference wall → goal rings). Only real numbers from the site, no invented results. Hook in first 2 s. CTA: comment PROMPTS / free Starter 10.
+1. (POSTPONED until real progress is visible on the site) Reel «I built 7 AI agents that run my Instagram»: screen recording of the live site (pipeline animation → agent cards with countdowns → reference wall → goal rings). Only real numbers from the site, no invented results. Hook in first 2 s. CTA: comment PROMPTS / free Starter 10.
 2. Weekly series «Week N: +X followers, Y downloads, Z sales» built from `status/goal.json` (real numbers only, even if small).
 
 ## Plan file: `plans/YYYY-wNN.json`
@@ -88,6 +88,12 @@ Media URL = `https://raw.githubusercontent.com/Makc9k/aiedge-media/main/<path>`.
 7. Every week: ≥4 posts carry the funnel line "Free Starter 10 → link in bio" (once the Gumroad link exists — check the
    product note `obsidian/Etsy/Продукти/AI Edge Prompt Pack.md`; before that use "Free prompt pack coming soon").
 8. Check your own work: render contact sheets / preview frames and look at them before shipping. Fix overlaps and cut-off text.
+
+## What sells (owner feedback 2026-11-23: "primitive and grey, I wouldn't buy from this")
+- Every Reel = ONE prompt that gives the viewer a vivid, personal result in ~10 s (model: @tech.bit0 selfie → glasses/colors/haircut, 36×). About the viewer, not about us.
+- Bright, high-contrast frames; no grey fog/washed-out looks; a visual "hit" (zoom-punch / reveal) every 1–2 s; result shown in the first 3 s.
+- Do NOT post content about our agents/site until it shows real progress (e.g. +50 followers or first sales). Empty dashboards = anti-proof.
+- Higgsfield (AI-generated cinematic shots + voice) will be connected after the owner's payday; until then use real screen captures of prompt results + bright brand motion.
 
 ## Reference-driven production (owner's rule: references decide the format, templates only decide the colors)
 Templates/engine give **brand style only** (colors, fonts, safe zones). The **structure of every post comes from its reference**.
