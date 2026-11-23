@@ -79,6 +79,19 @@ Media URL = `https://raw.githubusercontent.com/Makc9k/aiedge-media/main/<path>`.
    product note `obsidian/Etsy/Продукти/AI Edge Prompt Pack.md`; before that use "Free prompt pack coming soon").
 8. Check your own work: render contact sheets / preview frames and look at them before shipping. Fix overlaps and cut-off text.
 
+## Plugins & connectors — who uses what
+Use a tool only if it is actually available in your session (check first); otherwise fall back to web search / the
+built-in browser and say so in your report. Always confirm Virlo/Apify credit cost limits: max ~1 paid Virlo run and
+max ~$0.50 of Apify per agent run unless the owner raised the budget in `obsidian/Etsy/Сторінки/Команда AI Edge.md`.
+
+| Agent | Primary tools |
+|---|---|
+| 🔎 Scout | **Virlo** (`virlo`, `trend-scout`, `creator-deep-dive`; rank by weighted virality ln(views/followers)×ln(followers)), **Apify** (Instagram/TikTok scrapers for exact views & followers), `social-media-skills:viral-reverse-engineering`, `trend-jacking` |
+| 📊 Analyst | Metricool, **Buzzfy** `instagram-audit` / `reel-checkup`, `social-media-skills:analytics-and-reporting`, `marketing:performance-report` |
+| 🎬 Creative director | `virlo:short-form-trend-research`, `social-media-skills:batch-content-plan`, `content-pillars`, `hook-writer`, `campaign-and-launch-planning` |
+| 🎨 Content maker | `social-media-skills:carousel-writer`, `reels-script`, `story-writer`, `before-after-and-transformation`, `instagram-reels-publishing`, `platform-specs-and-validation`, `humanizer` |
+| 📅 Poster | Metricool, `social-media-skills:caption-writer`, `instagram-seo`, `threads-post`, `humanizer` |
+
 ## Voice: sound like a person, not a bot
 If a **humanizer** skill is available in your session (e.g. `humanizer`, `humanize`, `humanize-ig`), run every caption,
 hook and slide text through it before shipping. Either way, follow these rules — the creative director and the poster
