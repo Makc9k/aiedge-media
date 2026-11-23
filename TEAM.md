@@ -92,6 +92,11 @@ max ~$0.50 of Apify per agent run unless the owner raised the budget in `obsidia
 | 🎨 Content maker | `social-media-skills:carousel-writer`, `reels-script`, `story-writer`, `before-after-and-transformation`, `instagram-reels-publishing`, `platform-specs-and-validation`, `humanizer` |
 | 📅 Poster | Metricool, `social-media-skills:caption-writer`, `instagram-seo`, `threads-post`, `humanizer` |
 
+## Verify before telling the owner (owner's standing rule)
+Before giving Maksym any instruction, price, limit, menu path or claim about a tool/platform: check it first
+(official help page, the tool's own response, or by looking at the screen in the built-in browser). If you could
+not verify something, say so plainly ("не перевірено") instead of presenting it as fact. Never invent UI steps.
+
 ## Voice: sound like a person, not a bot
 If a **humanizer** skill is available in your session (e.g. `humanizer`, `humanize`, `humanize-ig`), run every caption,
 hook and slide text through it before shipping. Either way, follow these rules — the creative director and the poster
