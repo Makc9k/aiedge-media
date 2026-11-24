@@ -171,3 +171,10 @@ both check them:
 The built-in browser runs on the owner's PC and its sound goes to his headphones. After EVERY page open/navigation in the browser (Instagram, Threads, TikTok, YouTube, Reddit, any page with media) immediately run javascript_tool:
 `document.querySelectorAll('video,audio').forEach(m=>{m.muted=true;m.pause();}); new MutationObserver(()=>document.querySelectorAll('video,audio').forEach(m=>{m.muted=true;m.pause();})).observe(document.documentElement,{childList:true,subtree:true});`
 Never play videos with sound. Read views/followers/hooks from page text or screenshots. Prefer WebFetch/search over the browser when it is enough.
+
+## 🔊 Audio is mandatory (owner rule, 2026-11-24) — overrides any "silent AAC" / "no_audio" above
+- EVERY Reel and EVERY story must have audible sound. `"audio": "no_audio"` is no longer allowed in plans; silent fallback is forbidden.
+- Default when the reference sound is unknown or is a licensed song we can't use: brand voice **Liam** voiceover via the local TTS worker (job in `C:\ft_userdata\viral\tts_queue\`, result in `tts_out\`). Reel: voice reads the hook + key beats, cuts land on voice beats. Story: 1 short line (3–6 s) in Liam's voice.
+- If the TTS worker does not answer in 10 min: do NOT ship silent. Mark ⚠️ in the panel and tell the poster to hold that item.
+- Maker check before push: `ffmpeg -i file.mp4 -af volumedetect -f null -` → mean_volume must be above −35 dB. Write the value in manifest (`"mean_volume_db"`).
+- Poster check before scheduling: same volumedetect on the file; if mean_volume ≤ −35 dB (silent) — do not schedule, mark ❌ for the maker.
