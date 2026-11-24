@@ -9,10 +9,10 @@
    "day": "2026-11-25",
    "time": "18:00",
    "media": [
-    "posts/daily/2026-11-25/reel_1125_linkedin_headline.mp4"
+    "posts/daily/2026-11-25/reel_1125_linkedin_headline_v2.mp4"
    ],
    "media_url": [
-    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-25/reel_1125_linkedin_headline.mp4"
+    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-25/reel_1125_linkedin_headline_v2.mp4"
    ],
    "seconds": 16.6,
    "caption": "Your LinkedIn headline is probably just your job title. One prompt gives you 5 better ones in about 10 seconds.\nSwap in your title and what you actually do, then keep the one that sounds like you.\nFree Starter 10 → link in bio\n#linkedintips #chatgptprompts #careertips",
@@ -30,7 +30,8 @@
    "replaces_old": "Metricool 438858626 (18:00, old style) → draft",
    "reference_match": "ref-20261124-01 (@prompt.editor3, opened 13:31 in built-in browser): copied the phone-chat screen-recording structure — the same input stays attached in the message bar like the ref's photo, a short command is typed on an on-screen keyboard, results reveal one by one (~1.3 s each, zoom-punch + flash on every reveal). Changed: content (LinkedIn headline instead of photo edits), result shown in frame 0.8 s, 5 instead of 7 hacks, voiceover drives the cuts, stacked recap + CTA with the full prompt.",
    "mean_volume_db": -17.9,
-   "fix": "2026-11-24 18:50: punch/slam scale clamped so every text block stays ≤960 px wide (×1.075 camera punch ≤1032 px) — checked frames 0.05/0.3/0.88/0.95/4.75/8.0/8.1/8.5/9.8 s"
+   "fix": "2026-11-24 18:50: punch/slam scale clamped so every text block stays ≤960 px wide (×1.075 camera punch ≤1032 px) — checked frames 0.05/0.3/0.88/0.95/4.75/8.0/8.1/8.5/9.8 s",
+   "replace_in_metricool": true
   },
   {
    "kind": "post",
@@ -58,10 +59,10 @@
    "day": "2026-11-25",
    "time": "12:30",
    "media": [
-    "posts/daily/2026-11-25/story_1125_1230_teaser.mp4"
+    "posts/daily/2026-11-25/story_1125_1230_teaser_v2.mp4"
    ],
    "media_url": [
-    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-25/story_1125_1230_teaser.mp4"
+    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-25/story_1125_1230_teaser_v2.mp4"
    ],
    "networks": [
     "instagram"
@@ -76,17 +77,18 @@
     "note": "pauses trimmed, 1.05×, loudnorm -14 LUFS; green reveal on 'One prompt fixes it', teaser on 'Four more'"
    },
    "reference_match": "ref-20261124-01 result-in-first-frame: red headline struck from frame 0, best version zoom-punches at 1.6 s, teaser for 18:00",
-   "mean_volume_db": -18.0
+   "mean_volume_db": -18.0,
+   "replace_in_metricool": true
   },
   {
    "kind": "story",
    "day": "2026-11-25",
    "time": "12:35",
    "media": [
-    "posts/daily/2026-11-25/story_1125_1235_hint.mp4"
+    "posts/daily/2026-11-25/story_1125_1235_hint_v2.mp4"
    ],
    "media_url": [
-    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-25/story_1125_1235_hint.mp4"
+    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-25/story_1125_1235_hint_v2.mp4"
    ],
    "networks": [
     "instagram"
@@ -101,7 +103,8 @@
     "note": "starts at 0.9 s, ends on the 'Stops made-up stats' beat; loudnorm -14 LUFS"
    },
    "reference_match": "ref-20261124-11 'stop X / add this line': the line types into a chat bar, a made-up stat gets crossed out, CTA",
-   "mean_volume_db": -20.6
+   "mean_volume_db": -20.6,
+   "replace_in_metricool": true
   },
   {
    "kind": "thread",
@@ -144,5 +147,5 @@
   }
  ],
  "updated_at": "2026-11-24 18:50",
- "update_note": "Re-render 24.11 18:50: Reel — zoom-punch no longer crops text (kit SAFE_W=960, judge 24.11 #1); stories — Liam voice line added (TEAM.md 'Audio is mandatory'). Same file names → poster must re-attach media in Metricool (Reel 440297665 + both stories)."
+ "update_note": "Re-render 24.11 18:50: Reel — zoom-punch no longer crops text (kit SAFE_W=960, judge 24.11 #1); stories — Liam voice line added (TEAM.md 'Audio is mandatory'). Same file names → poster must re-attach media in Metricool (Reel 440297665 + both stories). | 2026-11-24 urgent re-run: saved as NEW names *_v2.mp4 so the poster/Metricool can't pick up the old silent/cropped files."
 }
