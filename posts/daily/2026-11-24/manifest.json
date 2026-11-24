@@ -25,7 +25,7 @@
   {
    "kind": "story",
    "day": "2026-11-24",
-   "time": "12:30",
+   "time": "16:00",
    "media": [
     "posts/2026-w48-v2/s1_1124_story.mp4"
    ],
@@ -35,12 +35,13 @@
    "networks": [
     "instagram"
    ],
-   "status": "ready (w48-v2)"
+   "status": "ready (w48-v2)",
+   "moved_from": "12:30"
   },
   {
    "kind": "story",
    "day": "2026-11-24",
-   "time": "12:35",
+   "time": "16:05",
    "media": [
     "posts/daily/2026-11-24/story_1124_1235_hint.mp4"
    ],
@@ -52,13 +53,14 @@
    ],
    "seconds": 6,
    "audio": "silent AAC (no_audio per plan)",
-   "status": "ready 13:35 — slot 12:35 already passed; poster: schedule at the next free slot today (e.g. 16:00) or skip",
-   "reference_match": "ref-20261123-10 'what happens when you ask AI to…' chat demo: kept typing the prompt into a chat bar + result promise; changed to a 6 s story with red strip hook, zoom-punch on 'already failed', green next-step card"
+   "status": "ready (made 13:35; director moved the slot to 16:05)",
+   "reference_match": "ref-20261123-10 'what happens when you ask AI to…' chat demo: kept typing the prompt into a chat bar + result promise; changed to a 6 s story with red strip hook, zoom-punch on 'already failed', green next-step card",
+   "moved_from": "12:35"
   },
   {
    "kind": "thread",
    "day": "2026-11-24",
-   "time": "15:30",
+   "time": "16:30",
    "networks": [
     "threads"
    ],
@@ -66,7 +68,8 @@
    "topic_tag": "AI Prompts",
    "image": null,
    "has_link": false,
-   "source_trend": "ref-20261124-11 https://www.threads.com/@hidayat._.ali9/post/DgGZJIhCH9m"
+   "source_trend": "ref-20261124-11 https://www.threads.com/@hidayat._.ali9/post/DgGZJIhCH9m",
+   "moved_from": "15:30"
   },
   {
    "kind": "thread",
