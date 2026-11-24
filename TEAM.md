@@ -35,7 +35,11 @@ Threads posts: plain text ≤500 chars (optionally 1 image); 3 different types p
 - Director: copy the reference's audio into the plan (`breakdown.audio`, and for songs a search term in `audio_search`). Timing of cuts should match the beat when the reference does that.
 - Maker / Poster implement it:
   - `trending_song` → Poster attaches Instagram library music in Metricool: `instagramData.audioConfiguration = {"audioId": "<numeric id or exact song title>"}` (Reels only). If Metricool rejects it (account not connected via a Facebook Page) → schedule without it, mark ⚠️ and write the exact error in the report. Never bake copyrighted songs into the file.
-  - `voiceover` → only if `TEAM.md` says ElevenLabs is allowed (currently: NOT allowed — owner has not approved using the key). Until then: big on-screen text that carries the same words.
+  - `voiceover` → ElevenLabs is ALLOWED (owner, 2026-11-24) through the local voice worker on the owner's PC — never open or print `elevenlabs_key.txt`.
+    1. Write a job file into the connected folder `C:\ft_userdata\viral\tts_queue\<id>.json` (device tools; in device_bash it is `$HOME/mnt/ft_userdata/viral/tts_queue/`): `{"id": "<date>_reel", "text": "<script, English, natural spoken style>", "voice": "<optional name from tts_out/_voices.json>", "lang": "en"}`.
+    2. Poll every 30 s (max 10 min) for `tts_out/<id>.json`. If `ok` is true, use `tts_out/<id>.mp3` (copy it into the cloud workspace with device_stage_files) and cut the video to the voice. If `fallback: true`, the free edge-tts voice was used — still OK, but say so in the report.
+    3. If nothing appears in 10 min, the worker is not running (PC off or `start_tts.cmd` not started): ship with big on-screen text instead and mark ⚠️.
+    Keep the voice consistent across Reels (pick one voice from `_voices.json` and write its name in TEAM.md once chosen).
   - `music_bed` → bake a track into the file only if its licence for commercial social use is verified; put the source URL + licence in `manifest.json`. If not verifiable → no music.
   - Stories: audio can only be baked into the file (no library music via API).
 
