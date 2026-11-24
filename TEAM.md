@@ -39,7 +39,7 @@ Threads posts: plain text ≤500 chars (optionally 1 image); 3 different types p
     1. Write a job file into the connected folder `C:\ft_userdata\viral\tts_queue\<id>.json` (device tools; in device_bash it is `$HOME/mnt/ft_userdata/viral/tts_queue/`): `{"id": "<date>_reel", "text": "<script, English, natural spoken style>", "voice": "<optional name from tts_out/_voices.json>", "lang": "en"}`.
     2. Poll every 30 s (max 10 min) for `tts_out/<id>.json`. If `ok` is true, use `tts_out/<id>.mp3` (copy it into the cloud workspace with device_stage_files) and cut the video to the voice. If `fallback: true`, the free edge-tts voice was used — still OK, but say so in the report.
     3. If nothing appears in 10 min, the worker is not running (PC off or `start_tts.cmd` not started): ship with big on-screen text instead and mark ⚠️.
-    Keep the voice consistent across Reels (pick one voice from `_voices.json` and write its name in TEAM.md once chosen).
+    Keep the voice consistent across Reels. **Brand voice: `Liam - Energetic, Social Media Creator`** (american male, social media) — pass it as `"voice"` in every job. Worker verified working 2026-11-24 (engine elevenlabs, model eleven_multilingual_v2).
   - `music_bed` → bake a track into the file only if its licence for commercial social use is verified; put the source URL + licence in `manifest.json`. If not verifiable → no music.
   - Stories: audio can only be baked into the file (no library music via API).
 
