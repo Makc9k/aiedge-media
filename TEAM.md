@@ -30,6 +30,15 @@ Threads posts: plain text ≤500 chars (optionally 1 image); 3 different types p
 - Director: for each day 24–30.11 take the Reel/carousel from `plans/2026-w48-v2.json` (already planned with breakdowns) into `plans/daily/YYYY-MM-DD.json`; add the 3 Threads posts and stories.
 - Poster: when the new item for a slot is ready, move the OLD-STYLE post in that slot to draft (`updateScheduledPost` draft: true, never delete), then schedule the new one. If the new item is not ready, leave the old one.
 
+## Audio follows the reference (owner's rule 2026-11-24)
+- Scout: for every Reel/TikTok reference add `"audio"`: `trending_song` (name it if visible) / `voiceover` / `original_sound` / `music_bed` / `no_audio`, plus `"audio_note"` (what the sound does: beat drops on the reveal, voice explains the prompt, etc.). Only what you actually see/hear on the page; else `null`.
+- Director: copy the reference's audio into the plan (`breakdown.audio`, and for songs a search term in `audio_search`). Timing of cuts should match the beat when the reference does that.
+- Maker / Poster implement it:
+  - `trending_song` → Poster attaches Instagram library music in Metricool: `instagramData.audioConfiguration = {"audioId": "<numeric id or exact song title>"}` (Reels only). If Metricool rejects it (account not connected via a Facebook Page) → schedule without it, mark ⚠️ and write the exact error in the report. Never bake copyrighted songs into the file.
+  - `voiceover` → only if `TEAM.md` says ElevenLabs is allowed (currently: NOT allowed — owner has not approved using the key). Until then: big on-screen text that carries the same words.
+  - `music_bed` → bake a track into the file only if its licence for commercial social use is verified; put the source URL + licence in `manifest.json`. If not verifiable → no music.
+  - Stories: audio can only be baked into the file (no library music via API).
+
 ## Reference library: `references/` (built by the Trendwatcher, used by everyone)
 The trendwatcher runs **every day** and looks for **small creators whose posts outperform their size** — the "outliers":
 accounts with roughly 1k–50k followers in our niche (AI prompts, AI tools, ChatGPT tips, AI productivity, AI for work/career)
