@@ -23,6 +23,11 @@ The director must apply the latest analyst «Рекомендації для д�
 If an upstream file is missing, the agent waits briefly (git pull every 5 min), then does a reasonable version itself and marks ⚠️.
 Threads posts: plain text ≤500 chars (optionally 1 image); 3 different types per day (useful prompt/tip with real result · opinion/question that invites replies · mini before/after or list); only one of the three carries the Starter 10 link.
 
+## Transition 24–30 Nov (old content → new)
+- Posts scheduled in Metricool for 24–30.11 BEFORE 2026-11-23 21:00 (media from `campaign/` or `posts/2026-w48/`) are **OLD STYLE** (owner rejected them).
+- Director: for each day 24–30.11 take the Reel/carousel from `plans/2026-w48-v2.json` (already planned with breakdowns) into `plans/daily/YYYY-MM-DD.json`; add the 3 Threads posts and stories.
+- Poster: when the new item for a slot is ready, move the OLD-STYLE post in that slot to draft (`updateScheduledPost` draft: true, never delete), then schedule the new one. If the new item is not ready, leave the old one.
+
 ## Reference library: `references/` (built by the Trendwatcher, used by everyone)
 The trendwatcher runs **every day** and looks for **small creators whose posts outperform their size** — the "outliers":
 accounts with roughly 1k–50k followers in our niche (AI prompts, AI tools, ChatGPT tips, AI productivity, AI for work/career)
