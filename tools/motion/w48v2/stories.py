@@ -18,13 +18,19 @@ def still_anim(path, mode="pan", dur=6):
     src = Image.open(os.path.join(CAR, path)).convert("RGB")
     def f(t):
         im = bg(t, a=CY, b=VIO)
-        if mode == "pan":      # zoomed cheat-sheet scrolling top -> bottom
-            k = ease_io(prog(t, .2, dur - 1.2))
-            sc = 1.55
-            big = src.resize((int(src.width * sc), int(src.height * sc)), Image.BILINEAR)
-            y = lerp(0, big.height - 1400, k)
-            crop = big.crop(((big.width - 1080) // 2, int(y), (big.width + 1080) // 2, int(y) + 1400))
-            im.paste(crop, (0, 260))
+        if mode == "pan":      # full cheat-sheet, highlight sweeps cell by cell (numbers flash)
+            im.paste(src, (0, 285))
+            i = int(clamp((t - .3) / (dur - 1.0)) * 10 - 1e-6) if t > .3 else -1
+            if i >= 0:
+                col, row = i // 5, i % 5
+                x, y = 40 + 30 + col * 470, 285 + 350 + 20 + row * 172
+                lt = (t - .3) % ((dur - 1.0) / 10)
+                ring = panel(470, 168, fill=(0, 0, 0), r=24, border=[CY, VIO, GREEN, AMBER, PINK][i % 5], bw=7,
+                             glow=[CY, VIO, GREEN, AMBER, PINK][i % 5], glow_r=18, shadow=False)
+                hole = ring.copy(); pd = ring.info["pad"]
+                m = Image.new("L", hole.size, 255); ImageDraw.Draw(m).rounded_rectangle((pd + 7, pd + 7, pd + 463, pd + 161), 18, fill=0)
+                hole.putalpha(Image.fromarray(np.minimum(np.array(hole.getchannel("A")), np.array(m))))
+                put(im, hole, x + 235, y + 84, scale=1 + .06 * math.exp(-lt / .1))
         else:                  # pop the slide in
             s = slam(t, 0, .25) * .98
             put(im, src.convert("RGBA"), W / 2, 960, scale=s)

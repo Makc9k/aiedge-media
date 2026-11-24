@@ -1,0 +1,269 @@
+{
+  "week": "2026-w48",
+  "version": "v2",
+  "media_base": "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/",
+  "items": [
+    {
+      "kind": "post",
+      "format": "reel",
+      "day": "2026-11-24",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/r1_1124_thanksgiving_premortem.mp4"
+      ],
+      "caption": "Hosting Thanksgiving this week? Ask the AI to imagine the dinner already went wrong.\n\nIt came back with 10 likely reasons (a turkey still frozen on Thursday was #1) and fixes for the top 3.\n\nIt's prompt #10. Free Starter 10 → link in bio\n#thanksgiving #chatgptprompts #aitips",
+      "alt": [
+        "AI chat lists 10 reasons a Thanksgiving dinner could fail, then fixes for the top 3"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-10",
+      "reference_match": "ref-20261123-10: kept the white meme-caption box on top for the whole video, answer visible under it from frame 0, then chat typing, then the list, then fixes (5 shots, punch ~every 1 s). Changed: Wi-Fi experiment → Thanksgiving pre-mortem, real Starter #10 output, brand colors, no talking head.",
+      "visual_device": "meme caption box over screen recording",
+      "replaces_old_style": true,
+      "cover_frame_s": 0.6,
+      "audio": "silent AAC track (owner adds music in the app)"
+    },
+    {
+      "kind": "post",
+      "format": "carousel",
+      "day": "2026-11-25",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/c1_1125_cheatsheet_1.jpg",
+        "posts/2026-w48-v2/c1_1125_cheatsheet_2.jpg",
+        "posts/2026-w48-v2/c1_1125_cheatsheet_3.jpg"
+      ],
+      "caption": "All ten prompts on one page, short enough to screenshot.\n\nSwap the [brackets] for your details and paste into ChatGPT, Claude or Gemini.\n\nFree Starter 10 → link in bio\n#chatgptprompts #aitips #productivity",
+      "alt": [
+        "Cheat sheet with 10 short AI prompts for email, planning, resume, meals and decisions",
+        "Cheat sheet with 10 short AI prompts for email, planning, resume, meals and decisions",
+        "Cheat sheet with 10 short AI prompts for email, planning, resume, meals and decisions"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-08",
+      "reference_match": "ref-20261123-08: kept one dense numbered cheat-sheet on a light notebook card as slide 1 (save/screenshot bait). Changed: 10 work/life prompts instead of 100 photo codes, 2 columns, added slide 2 (#03 real output) and CTA slide; no comment keyword.",
+      "visual_device": "dense cheat-sheet grid",
+      "replaces_old_style": true
+    },
+    {
+      "kind": "post",
+      "format": "reel",
+      "day": "2026-11-26",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/r2_1126_messy_email.mp4"
+      ],
+      "caption": "Two prompts for a messy email.\n\nThe first one moves your ask to line one and keeps your facts. The second is just \"make it warmer.\"\n\nFree Starter 10 → link in bio\n#emailtips #chatgptprompts #worksmarter",
+      "alt": [
+        "A rambling time-off request rewritten by AI into a clear, warm 5-sentence email"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-03",
+      "reference_match": "ref-20261123-03: kept 'from X to Y — two prompts' structure: result split first, step 1, step 2, back to before/after. Changed: photo edit → messy email, split before/after with marker highlights, real #01 prompt + 'make it warmer'.",
+      "visual_device": "split before/after",
+      "replaces_old_style": true,
+      "cover_frame_s": 0.6,
+      "audio": "silent AAC track (owner adds music in the app)"
+    },
+    {
+      "kind": "post",
+      "format": "reel",
+      "day": "2026-11-27",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/r3_1127_blackfriday_decision.mp4"
+      ],
+      "caption": "Black Friday deal, or keep what you have? Give the AI both options and what matters to you.\n\nYou get a table against your priorities, what you might be missing and 3 questions to answer. The call is still yours.\n\nFree Starter 10 → link in bio\n#blackfriday #chatgptprompts #aitips",
+      "alt": [
+        "AI compares buying a Black Friday laptop deal vs waiting, in a table against the user's priorities"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-02",
+      "reference_match": "ref-20261123-02: kept question hook with objects popping in, one input typed, then 3 outputs revealed one after another with a pop every ~0.5–1 s. Changed: book→Black Friday decision, emoji objects instead of 3D/talking head, table + blind spots + questions.",
+      "visual_device": "list reveal with pop-in icons",
+      "replaces_old_style": true,
+      "cover_frame_s": 0.6,
+      "audio": "silent AAC track (owner adds music in the app)"
+    },
+    {
+      "kind": "post",
+      "format": "carousel",
+      "day": "2026-11-28",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/c2_1128_resume_1.jpg",
+        "posts/2026-w48-v2/c2_1128_resume_2.jpg",
+        "posts/2026-w48-v2/c2_1128_resume_3.jpg",
+        "posts/2026-w48-v2/c2_1128_resume_4.jpg",
+        "posts/2026-w48-v2/c2_1128_resume_5.jpg",
+        "posts/2026-w48-v2/c2_1128_resume_6.jpg"
+      ],
+      "caption": "Typing \"fix my resume\" gets you buzzwords.\n\nThis prompt rewrites duties as results. Where a real number belongs, it leaves [add number] so you fill it in instead of the AI making one up.\n\nFree Starter 10 → link in bio\n#resumetips #careeradvice #chatgptprompts",
+      "alt": [
+        "Weak vs strong AI prompt for resume bullets, with before and after bullet points",
+        "Weak vs strong AI prompt for resume bullets, with before and after bullet points",
+        "Weak vs strong AI prompt for resume bullets, with before and after bullet points",
+        "Weak vs strong AI prompt for resume bullets, with before and after bullet points",
+        "Weak vs strong AI prompt for resume bullets, with before and after bullet points",
+        "Weak vs strong AI prompt for resume bullets, with before and after bullet points"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-11",
+      "reference_match": "ref-20261123-11: kept the 'STOP telling AI X' giant-caps cover and 'use this instead' prompt-block slides. Changed: no photo of a person (gradient cover with red strike), added real before→after bullets and [add number] slide; link in bio instead of comment keyword.",
+      "visual_device": "stop-X-say-Y comparison slides",
+      "replaces_old_style": true
+    },
+    {
+      "kind": "post",
+      "format": "reel",
+      "day": "2026-11-29",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/r4_1129_dinner_plan.mp4"
+      ],
+      "caption": "Next week's dinners, sorted on Sunday.\n\nTell it how many people, your budget, how long you'll cook and what you skip. You get 5 dinners and one shopping list by store aisle.\n\nFree Starter 10 → link in bio\n#mealplanning #chatgptprompts #aitips",
+      "alt": [
+        "AI turns a short prompt into a 5-day dinner plan and a shopping list grouped by aisle"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-01",
+      "reference_match": "ref-20261123-01: kept 'Stop guessing…' hook with the finished bright result card shown first, then the input, then the card building, then a second output (save-for-later framing). Changed: selfie → dinner plan, tiles + shopping list by aisle.",
+      "visual_device": "chat demo → infographic result card",
+      "replaces_old_style": true,
+      "cover_frame_s": 0.6,
+      "audio": "silent AAC track (owner adds music in the app)"
+    },
+    {
+      "kind": "post",
+      "format": "reel",
+      "day": "2026-11-30",
+      "time": "18:00",
+      "media": [
+        "posts/2026-w48-v2/r5_1130_monday_plan.mp4"
+      ],
+      "caption": "It's Monday and the to-do list is a mess. Paste it in.\n\nThe AI sorts it, guesses how long each thing takes and caps focused work at 4 hours a day. You decide what stays.\n\nFree Starter 10 → link in bio\n#productivity #chatgptprompts #weeklyplanning",
+      "alt": [
+        "A messy to-do list sorted by AI into urgent, important, later and delete, then a Monday to Friday plan"
+      ],
+      "networks": [
+        "instagram",
+        "threads"
+      ],
+      "source_trend": "ref-20261123-06",
+      "reference_match": "ref-20261123-06: kept 'X killed Y' cover (bold headline, one word in red marker style, crossed-out sticker, FREE badge) then a motion-graphic explainer with a central node, orbiting items and word-by-word captions. Changed: tool news → to-do list sorting into buckets and a Mon–Fri grid.",
+      "visual_device": "motion-graphic diagram (X killed Y cover)",
+      "replaces_old_style": true,
+      "cover_frame_s": 0.6,
+      "audio": "silent AAC track (owner adds music in the app)"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-24",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s1_1124_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-25",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s2_1125_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-26",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s3_1126_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-27",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s4_1127_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-28",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s5_1128_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-29",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s6_1129_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    },
+    {
+      "kind": "story",
+      "day": "2026-11-30",
+      "time": "12:30",
+      "media": [
+        "posts/2026-w48-v2/s7_1130_story.mp4"
+      ],
+      "networks": [
+        "instagram"
+      ],
+      "reference_match": "re-cut of the same day's post shots (same reference structure) + story CTA; 'at 18:00' changed to 'in today's Reel/post' (US audience, different time zone)",
+      "note": "single video covering the planned scenes; add a link sticker/poll in the app if wanted"
+    }
+  ]
+}
