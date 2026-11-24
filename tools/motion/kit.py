@@ -22,6 +22,8 @@ W, H, FPS = 1080, 1920, 30
 BG = (7, 11, 24); CY = (34, 211, 238); VIO = (167, 139, 250); GREEN = (52, 211, 153); RED = (248, 113, 113)
 AMBER = (251, 191, 36); WHITE = (255, 255, 255); INK = (10, 12, 22); PANEL = (16, 22, 52); PANEL2 = (24, 32, 72)
 PINK = (244, 114, 182)
+# max on-screen width of a centred sprite body; with the camera zoom-punch (×1.075) it still stays inside 1080 px
+SAFE_W = 960
 
 FD = "/usr/share/fonts/opentype/inter/"
 FONTS = {"black": FD + "Inter-Black.otf", "xb": FD + "Inter-ExtraBold.otf", "bold": FD + "Inter-Bold.otf",
@@ -168,6 +170,9 @@ _luts = {}
 def put(im, sp, cx, cy, scale=1.0, alpha=1.0, rot=0, anchor="c"):
     """Paste sprite centred at (cx, cy) (anchor 'c'), or top-left 'tl' / top-centre 'tc'."""
     if sp is None or scale <= 0.01 or alpha <= 0.01: return
+    if SAFE_W and anchor == "c":           # judge 2026-11-24: zoom-punch must never push text past the frame edge
+        body = sp.width - 2 * sp.info.get("pad", 0)
+        if body * scale > SAFE_W: scale = SAFE_W / body
     s = sp
     if abs(scale - 1) > 0.004:
         s = sp.resize((max(1, int(sp.width * scale)), max(1, int(sp.height * scale))), Image.BILINEAR)

@@ -168,25 +168,31 @@ SHAKE = [T_R[2]]
 
 
 # ---------------- stories ----------------
+# Voice (owner rule 2026-11-24: audio mandatory): Liam lines from tts_out/2026-11-25_story1/2.mp3, see build_vo_1125_stories.py
+SVO = json.load(open(os.path.join(HERE, "assets", "vo_s1125a.json")))
+S_FIX = SVO["fix"][0]; S_MORE = SVO["more"][0]; S1_END = 6.6
+
+
 def story_1230(t):
-    """6 s: red card struck (moving from frame 0) → green line zoom-punches → '4 more versions at 18:00'."""
-    im = bg(t + 1, a=RED if t < 1.5 else GREEN, b=VIO)
+    """6.6 s: red card struck (moving from frame 0) → green line zoom-punches on 'One prompt fixes it' → '4 more at 18:00'."""
+    a, b, c = S_FIX - 1.0, S_FIX - .1, S_MORE   # 'one prompt fixes' hint, green reveal, '4 more' — on voice beats
+    im = bg(t + 1, a=RED if t < b else GREEN, b=VIO)
     put(im, chip("LINKEDIN HEADLINE", 54, fg=BG, bg=AMBER, glow=AMBER, padx=36), W / 2, 360, scale=pop(t, 0, .25))
-    k = ease(prog(t, 1.35, .3))
+    k = ease(prog(t, b - .15, .3))
     if k < 1:
         put(im, txt("Yours right now:", 74, WHITE, w="black"), W / 2, 560, alpha=1 - k, scale=slam(t, 0, .2))
-    yR = lerp(800, 560, k); rk = lerp(lerp(1.06, 1.0, ease(prog(t, 0, .4))), .9, k)
+    yR = lerp(800, 610, k); rk = lerp(lerp(1.06, 1.0, ease(prog(t, 0, .4))), .9, k)
     put(im, wcard(BEFORE, w=920, col=RED, size=76, weight="xb", fill_k=.55, pad=40), W / 2, yR, scale=rk, alpha=1 - .35 * k)
     strike_card(im, BEFORE, 920, 76, 40, W / 2, yR, rk, ease(prog(t, .15, 1.0)), width=13)
-    if .5 <= t < 1.5:
+    if a <= t < b:
         put(im, txt("One prompt fixes this ↓", 66, grad=(CY, GREEN), glow=CY, glow_r=16, glow_a=.6), W / 2, 1180,
-            scale=slam(t, .5, .2), alpha=1 - k)
-    if t >= 1.5:
-        put(im, chip("ONE PROMPT LATER", 50, fg=BG, bg=GREEN, glow=GREEN, padx=34), W / 2, 790, scale=pop(t, 1.5, .25))
-        put(im, wcard(RES[2][2], w=960, col=GREEN, size=76, weight="xb", fill_k=.6, pad=44), W / 2, 1040, scale=slam(t, 1.6, .22))
-    if t >= 4.0:
-        put(im, txt("4 more versions at 18:00", 74, grad=(CY, VIO), glow=CY, glow_r=18, glow_a=.7), W / 2, 1360, scale=slam(t, 4.0, .2))
-        put(im, chip("one prompt · @aiedge.prompts", 48, fg=WHITE, bg=(40, 52, 110), padx=32), W / 2, 1490, scale=pop(t, 4.3, .3))
+            scale=slam(t, a, .2), alpha=1 - k)
+    if t >= b:
+        put(im, chip("ONE PROMPT LATER", 50, fg=BG, bg=GREEN, glow=GREEN, padx=34), W / 2, 818, scale=pop(t, b, .25))
+        put(im, wcard(RES[2][2], w=960, col=GREEN, size=76, weight="xb", fill_k=.6, pad=44), W / 2, 1060, scale=slam(t, b + .1, .22))
+    if t >= c:
+        put(im, txt("4 more versions at 18:00", 74, grad=(CY, VIO), glow=CY, glow_r=18, glow_a=.7), W / 2, 1360, scale=slam(t, c, .2))
+        put(im, chip("one prompt · @aiedge.prompts", 48, fg=WHITE, bg=(40, 52, 110), padx=32), W / 2, 1490, scale=pop(t, c + .3, .3))
     return im
 
 
@@ -229,6 +235,8 @@ if __name__ == "__main__":
         p = os.path.join(OUT, "reel_1125_linkedin_headline.mp4")
         render(p, frame, END, BEATS, FLASH, SHAKE); mux(p, os.path.join(HERE, "assets", "vo_1125.m4a"))
     if "s1" in what:
-        render(os.path.join(OUT, "story_1125_1230_teaser.mp4"), story_1230, 6.0, [0, 1.5, 1.6, 4.3], [1.6])
+        p = os.path.join(OUT, "story_1125_1230_teaser.mp4")
+        render(p, story_1230, S1_END, [0, S_FIX - 1.0, S_FIX, S_MORE], [S_FIX]); mux(p, os.path.join(HERE, "assets", "vo_s1125a.m4a"))
     if "s2" in what:
-        render(os.path.join(OUT, "story_1125_1235_hint.mp4"), story_1235, 6.0, [0, .15, 2.5, 3.1, 4.1], [2.5, 4.1])
+        p = os.path.join(OUT, "story_1125_1235_hint.mp4")
+        render(p, story_1235, 6.0, [0, .15, 2.5, 3.1, 4.1], [2.5, 4.1]); mux(p, os.path.join(HERE, "assets", "vo_s1125b.m4a"))
