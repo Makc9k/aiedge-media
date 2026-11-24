@@ -1,176 +1,177 @@
 {
- "date": "2026-11-25",
- "made_by": "🎬 Директор",
- "made_at": "2026-11-24 10:50",
- "note": "Daily quota = Reel at 18:00, so the w48-v2 cheat-sheet carousel moves to 13:30 as a bonus feed post (Instagram only, already made). Its story s2_1125 says 'at 18:00', so it is NOT used. Old-style Metricool post 438858626 (18:00) → draft when the Reel is scheduled.",
- "items": {
-  "reel": {
-   "kind": "reel",
-   "day": "2026-11-25",
-   "time": "18:00",
-   "format": "reel",
-   "seconds": 15,
-   "prompt_id": "LinkedIn headline x5 (new, not in Starter 10)",
-   "hook": "Your LinkedIn headline, 5 better versions. One prompt.",
-   "source_trend": "ref-20261124-01 https://www.tiktok.com/@prompt.editor3/video/7708350761721220370 (+ ref-20261124-02 'one secret command' curiosity)",
-   "reference_opened": "2026-11-24 10:40 built-in browser: 38 s phone screen recording of a chat app; the same photo stays attached in the input box, a short slash-command is typed (/throughobj, /motiontra…), then the edited result appears; next hack repeats with the same photo. 232.7K likes, 232.6K saves, 46.2K shares.",
-   "breakdown": {
-    "hook_seconds": 1.5,
-    "hook_mechanic": "result in frame 0: the viewer's 'before' (plain job title, red, struck through) and the best version punching in green on top of a phone chat screen; question-free, the payoff IS the hook",
-    "shots": [
-     {
-      "t": "0-1.5",
-      "what": "phone-style chat screen; input card holds 'Marketing Coordinator at a dental group' (red) → strike-through → green version #3 zoom-punches in",
-      "text_on_screen": "Your LinkedIn headline. 5 upgrades. 1 prompt."
-     },
-     {
-      "t": "1.5-3.5",
-      "what": "same input card stays attached (like the ref's photo); prompt types fast into the chat bar, short form visible, send tap",
-      "text_on_screen": "Rewrite my headline 5 ways…"
-     },
-     {
-      "t": "3.5-5",
-      "what": "reveal #1 with chip RESULTS-FIRST (cyan), zoom-punch",
-      "text_on_screen": "Keeping 6 dental offices in front of their patients through email and social"
-     },
-     {
-      "t": "5-6.5",
-      "what": "reveal #2 chip RECRUITER KEYWORDS (violet), keyword words flash-highlight",
-      "text_on_screen": "Marketing Coordinator | Email Marketing · Newsletters · Social Media Management | Healthcare"
-     },
-     {
-      "t": "6.5-8",
-      "what": "reveal #3 chip MEMORABLE (green), biggest punch + glow",
-      "text_on_screen": "I write the emails your dentist sends. All 6 offices."
-     },
-     {
-      "t": "8-9.5",
-      "what": "reveal #4 chip FREELANCE (cyan)",
-      "text_on_screen": "I run newsletters and social media for dental practices, so the team can stay with patients"
-     },
-     {
-      "t": "9.5-11",
-      "what": "reveal #5 chip PLAIN + CONFIDENT (violet)",
-      "text_on_screen": "Marketing Coordinator. I run email and social for 6 dental offices."
-     },
-     {
-      "t": "11-13",
-      "what": "all 5 stacked as cards, finger-tap highlight on #3, 'pick one, paste it'",
-      "text_on_screen": "Pick the one that sounds like you"
-     },
-     {
-      "t": "13-15",
-      "what": "full prompt card (mono font) + CTA",
-      "text_on_screen": "Free Starter 10 → link in bio"
-     }
+  "date": "2026-11-25",
+  "made_by": "🎬 Директор",
+  "made_at": "2026-11-24 10:50",
+  "note": "Daily quota = Reel at 18:00, so the w48-v2 cheat-sheet carousel moves to 13:30 as a bonus feed post (Instagram only, already made). Its story s2_1125 says 'at 18:00', so it is NOT used. Old-style Metricool post 438858626 (18:00) → draft when the Reel is scheduled. | Update 13:35: analyst rec #1 (daily Reel, prompt.editor3 'N edits' format, LinkedIn/resume theme) — matched by the LinkedIn headline ×5 Reel. No 'Comment WORD' (no auto-reply). Judge report: none yet.",
+  "items": {
+    "reel": {
+      "kind": "reel",
+      "day": "2026-11-25",
+      "time": "18:00",
+      "format": "reel",
+      "seconds": 15,
+      "prompt_id": "LinkedIn headline x5 (new, not in Starter 10)",
+      "hook": "Your LinkedIn headline, 5 better versions. One prompt.",
+      "source_trend": "ref-20261124-01 https://www.tiktok.com/@prompt.editor3/video/7708350761721220370 (+ ref-20261124-02 'one secret command' curiosity)",
+      "reference_opened": "2026-11-24 10:40 built-in browser: 38 s phone screen recording of a chat app; the same photo stays attached in the input box, a short slash-command is typed (/throughobj, /motiontra…), then the edited result appears; next hack repeats with the same photo. 232.7K likes, 232.6K saves, 46.2K shares.",
+      "breakdown": {
+        "hook_seconds": 1.5,
+        "hook_mechanic": "result in frame 0: the viewer's 'before' (plain job title, red, struck through) and the best version punching in green on top of a phone chat screen; question-free, the payoff IS the hook",
+        "shots": [
+          {
+            "t": "0-1.5",
+            "what": "phone-style chat screen; input card holds 'Marketing Coordinator at a dental group' (red) → strike-through → green version #3 zoom-punches in",
+            "text_on_screen": "Your LinkedIn headline. 5 upgrades. 1 prompt."
+          },
+          {
+            "t": "1.5-3.5",
+            "what": "same input card stays attached (like the ref's photo); prompt types fast into the chat bar, short form visible, send tap",
+            "text_on_screen": "Rewrite my headline 5 ways…"
+          },
+          {
+            "t": "3.5-5",
+            "what": "reveal #1 with chip RESULTS-FIRST (cyan), zoom-punch",
+            "text_on_screen": "Keeping 6 dental offices in front of their patients through email and social"
+          },
+          {
+            "t": "5-6.5",
+            "what": "reveal #2 chip RECRUITER KEYWORDS (violet), keyword words flash-highlight",
+            "text_on_screen": "Marketing Coordinator | Email Marketing · Newsletters · Social Media Management | Healthcare"
+          },
+          {
+            "t": "6.5-8",
+            "what": "reveal #3 chip MEMORABLE (green), biggest punch + glow",
+            "text_on_screen": "I write the emails your dentist sends. All 6 offices."
+          },
+          {
+            "t": "8-9.5",
+            "what": "reveal #4 chip FREELANCE (cyan)",
+            "text_on_screen": "I run newsletters and social media for dental practices, so the team can stay with patients"
+          },
+          {
+            "t": "9.5-11",
+            "what": "reveal #5 chip PLAIN + CONFIDENT (violet)",
+            "text_on_screen": "Marketing Coordinator. I run email and social for 6 dental offices."
+          },
+          {
+            "t": "11-13",
+            "what": "all 5 stacked as cards, finger-tap highlight on #3, 'pick one, paste it'",
+            "text_on_screen": "Pick the one that sounds like you"
+          },
+          {
+            "t": "13-15",
+            "what": "full prompt card (mono font) + CTA",
+            "text_on_screen": "Free Starter 10 → link in bio"
+          }
+        ],
+        "cut_rhythm": "new reveal every ~1.5 s with zoom-punch, same input card stays on screen (ref: same photo, new command each time)",
+        "visual_device": "phone chat screen recording: same input stays attached, results reveal one by one (hack list)",
+        "payoff_at": "0 s (best version visible), all 5 by 11 s",
+        "cta_style": "link in bio, no comment keyword (no active auto-reply)",
+        "audio": null,
+        "audio_note": "sound of the reference not verified (muted autoplay, no sound label in page text). Maker: brand voice Liam reads the hook + 5 chip labels via tts_queue if worker answers; else silent + big text. Cut reveals on voice beats."
+      },
+      "audio_search": null,
+      "demo_input": "My LinkedIn headline: \"Marketing Coordinator at a dental group\". What I actually do: I run the email newsletter and all social media for 6 dental offices. Rewrite my headline 5 ways: 1) results-first 2) packed with keywords recruiters search 3) one line people remember 4) for freelance clients 5) plain and confident. Max 120 characters each. Don't add numbers or results I didn't give you.",
+      "demo_output": [
+        "1. Results-first: Keeping 6 dental offices in front of their patients through email and social",
+        "2. Recruiter keywords: Marketing Coordinator | Email Marketing · Newsletters · Social Media Management | Healthcare",
+        "3. Memorable: I write the emails your dentist sends. All 6 offices.",
+        "4. Freelance clients: I run newsletters and social media for dental practices, so the team can stay with patients",
+        "5. Plain and confident: Marketing Coordinator. I run email and social for 6 dental offices."
+      ],
+      "demo_note": "real answer generated by Claude (director run 2026-11-24); persona is a sample, the viewer swaps in their own title",
+      "caption": "Your LinkedIn headline is probably just your job title. One prompt gives you 5 better ones in about 10 seconds.\nSwap in your title and what you actually do, then keep the one that sounds like you.\nFree Starter 10 → link in bio\n#linkedintips #chatgptprompts #careertips",
+      "alt": "A plain job-title headline turns into five rewritten LinkedIn headlines from one AI prompt",
+      "palette_note": "bright: bg #070B18, before #F87171, chips cyan/violet/green, no grey overlays"
+    },
+    "bonus_post": {
+      "kind": "carousel",
+      "day": "2026-11-25",
+      "time": "13:30",
+      "networks": [
+        "instagram"
+      ],
+      "from_plan": "plans/2026-w48-v2.json",
+      "media": [
+        "posts/2026-w48-v2/c1_1125_cheatsheet_1.jpg",
+        "posts/2026-w48-v2/c1_1125_cheatsheet_2.jpg",
+        "posts/2026-w48-v2/c1_1125_cheatsheet_3.jpg"
+      ],
+      "source_trend": "ref-20261123-08",
+      "status": "ready",
+      "optional": true
+    },
+    "threads": [
+      {
+        "day": "2026-11-25",
+        "time": "15:30",
+        "network": "threads",
+        "type": "tip_prompt_with_result",
+        "text": "Your LinkedIn headline is probably just your job title. Try this:\n\n\"My headline: [title]. What I actually do: [one line]. Rewrite it 5 ways: results-first, recruiter keywords, one line people remember, for freelance clients, plain and confident. Max 120 characters each. Don't add numbers I didn't give you.\"\n\nFor a marketing coordinator who runs email + social for 6 dental offices, my pick was:\n\"I write the emails your dentist sends. All 6 offices.\"\n\nThe last rule keeps it from inventing stats.",
+        "has_link": false,
+        "topic_tag": "LinkedIn Tips",
+        "image": null,
+        "source_trend": "ref-20261124-09 https://www.threads.com/@harboris.ai/post/Df1ptdygQ6y (full prompt in the post text, saved/shared)",
+        "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
+      },
+      {
+        "day": "2026-11-25",
+        "time": "19:30",
+        "network": "threads",
+        "type": "opinion_question",
+        "text": "\"Make it better\" might be the worst prompt you can type.\n\nBetter for who? Shorter or longer? The AI has to guess, and it usually guesses longer and fancier.\n\nAdd one line: who's reading it and what they should do next. Most rewrites get fixed right there.\n\nWhat's a prompt you quit using because it never worked?",
+        "has_link": false,
+        "topic_tag": "AI Prompts",
+        "image": null,
+        "source_trend": "ref-20261124-11 (correction hook 'stop X') turned into a reply question",
+        "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
+      },
+      {
+        "day": "2026-11-25",
+        "time": "22:30",
+        "network": "threads",
+        "type": "before_after",
+        "text": "Night-before-Thanksgiving group text, before:\n\"hey so tomorrow is at 3 but maybe 3:30 idk, can someone bring chairs?? also who's doing pie, and is anyone vegetarian this year\"\n\nPrompt: \"Turn this into one clear group text. Keep my facts. End with the questions people need to answer.\"\n\nAfter:\n\"Tomorrow starts at 3, maybe 3:30. Quick questions:\n1. Who can bring chairs?\n2. Who's doing pie?\n3. Anyone vegetarian this year?\"\n\nMore everyday prompts, free: https://makc9k.gumroad.com/l/starter10",
+        "has_link": true,
+        "topic_tag": "Thanksgiving",
+        "image": null,
+        "source_trend": "ref-20261124-08 (before/after result as the whole post) + ref-20261124-11",
+        "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
+      }
     ],
-    "cut_rhythm": "new reveal every ~1.5 s with zoom-punch, same input card stays on screen (ref: same photo, new command each time)",
-    "visual_device": "phone chat screen recording: same input stays attached, results reveal one by one (hack list)",
-    "payoff_at": "0 s (best version visible), all 5 by 11 s",
-    "cta_style": "link in bio, no comment keyword (no active auto-reply)",
-    "audio": null,
-    "audio_note": "sound of the reference not verified (muted autoplay, no sound label in page text). Maker: brand voice Liam reads the hook + 5 chip labels via tts_queue if worker answers; else silent + big text. Cut reveals on voice beats."
-   },
-   "audio_search": null,
-   "demo_input": "My LinkedIn headline: \"Marketing Coordinator at a dental group\". What I actually do: I run the email newsletter and all social media for 6 dental offices. Rewrite my headline 5 ways: 1) results-first 2) packed with keywords recruiters search 3) one line people remember 4) for freelance clients 5) plain and confident. Max 120 characters each. Don't add numbers or results I didn't give you.",
-   "demo_output": [
-    "1. Results-first: Keeping 6 dental offices in front of their patients through email and social",
-    "2. Recruiter keywords: Marketing Coordinator | Email Marketing · Newsletters · Social Media Management | Healthcare",
-    "3. Memorable: I write the emails your dentist sends. All 6 offices.",
-    "4. Freelance clients: I run newsletters and social media for dental practices, so the team can stay with patients",
-    "5. Plain and confident: Marketing Coordinator. I run email and social for 6 dental offices."
-   ],
-   "demo_note": "real answer generated by Claude (director run 2026-11-24); persona is a sample, the viewer swaps in their own title",
-   "caption": "Your LinkedIn headline is probably just your job title. One prompt gives you 5 better ones in about 10 seconds.\nSwap in your title and what you actually do, then keep the one that sounds like you.\nFree Starter 10 → link in bio\n#linkedintips #chatgptprompts #careertips",
-   "alt": "A plain job-title headline turns into five rewritten LinkedIn headlines from one AI prompt",
-   "palette_note": "bright: bg #070B18, before #F87171, chips cyan/violet/green, no grey overlays"
+    "stories": [
+      {
+        "kind": "story",
+        "day": "2026-11-25",
+        "time": "12:30",
+        "role": "Reel teaser",
+        "seconds": 6,
+        "scenes": [
+          "0-1.5 s: red card 'Marketing Coordinator at a dental group' gets struck through (moving from frame 0)",
+          "1.5-4.5 s: green line zoom-punches in: 'I write the emails your dentist sends. All 6 offices.'",
+          "4.5-6 s: '4 more versions at 18:00 · one prompt'"
+        ],
+        "source_trend": "ref-20261124-01 (result in first frame)",
+        "audio": "no_audio",
+        "status": "to make"
+      },
+      {
+        "kind": "story",
+        "day": "2026-11-25",
+        "time": "12:35",
+        "role": "prompt hint",
+        "seconds": 5,
+        "scenes": [
+          "0-1 s: chip 'Prompt hint' pops",
+          "1-4 s: line types at the end of a rewrite prompt: \"Don't add numbers I didn't give you.\" ; a fake-looking stat in red gets crossed out",
+          "4-5 s: 'Stops made-up stats · Free Starter 10 → link in bio'"
+        ],
+        "source_trend": "ref-20261124-11 (stop X / add this line)",
+        "audio": "no_audio",
+        "status": "to make"
+      }
+    ]
   },
-  "bonus_post": {
-   "kind": "carousel",
-   "day": "2026-11-25",
-   "time": "13:30",
-   "networks": [
-    "instagram"
-   ],
-   "from_plan": "plans/2026-w48-v2.json",
-   "media": [
-    "posts/2026-w48-v2/c1_1125_cheatsheet_1.jpg",
-    "posts/2026-w48-v2/c1_1125_cheatsheet_2.jpg",
-    "posts/2026-w48-v2/c1_1125_cheatsheet_3.jpg"
-   ],
-   "source_trend": "ref-20261123-08",
-   "status": "ready",
-   "optional": true
-  },
-  "threads": [
-   {
-    "day": "2026-11-25",
-    "time": "15:30",
-    "network": "threads",
-    "type": "tip_prompt_with_result",
-    "text": "Your LinkedIn headline is probably just your job title. Try this:\n\n\"My headline: [title]. What I actually do: [one line]. Rewrite it 5 ways: results-first, recruiter keywords, one line people remember, for freelance clients, plain and confident. Max 120 characters each. Don't add numbers I didn't give you.\"\n\nFor a marketing coordinator who runs email + social for 6 dental offices, my pick was:\n\"I write the emails your dentist sends. All 6 offices.\"\n\nThe last rule keeps it from inventing stats.",
-    "has_link": false,
-    "topic_tag": "LinkedIn Tips",
-    "image": null,
-    "source_trend": "ref-20261124-09 https://www.threads.com/@harboris.ai/post/Df1ptdygQ6y (full prompt in the post text, saved/shared)",
-    "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
-   },
-   {
-    "day": "2026-11-25",
-    "time": "19:30",
-    "network": "threads",
-    "type": "opinion_question",
-    "text": "\"Make it better\" might be the worst prompt you can type.\n\nBetter for who? Shorter or longer? The AI has to guess, and it usually guesses longer and fancier.\n\nAdd one line: who's reading it and what they should do next. Most rewrites get fixed right there.\n\nWhat's a prompt you quit using because it never worked?",
-    "has_link": false,
-    "topic_tag": "AI Prompts",
-    "image": null,
-    "source_trend": "ref-20261124-11 (correction hook 'stop X') turned into a reply question",
-    "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
-   },
-   {
-    "day": "2026-11-25",
-    "time": "22:30",
-    "network": "threads",
-    "type": "before_after",
-    "text": "Night-before-Thanksgiving group text, before:\n\"hey so tomorrow is at 3 but maybe 3:30 idk, can someone bring chairs?? also who's doing pie, and is anyone vegetarian this year\"\n\nPrompt: \"Turn this into one clear group text. Keep my facts. End with the questions people need to answer.\"\n\nAfter:\n\"Tomorrow starts at 3, maybe 3:30. Quick questions:\n1. Who can bring chairs?\n2. Who's doing pie?\n3. Anyone vegetarian this year?\"\n\nMore everyday prompts, free: https://makc9k.gumroad.com/l/starter10",
-    "has_link": true,
-    "topic_tag": "Thanksgiving",
-    "image": null,
-    "source_trend": "ref-20261124-08 (before/after result as the whole post) + ref-20261124-11",
-    "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
-   }
-  ],
-  "stories": [
-   {
-    "kind": "story",
-    "day": "2026-11-25",
-    "time": "12:30",
-    "role": "Reel teaser",
-    "seconds": 6,
-    "scenes": [
-     "0-1.5 s: red card 'Marketing Coordinator at a dental group' gets struck through (moving from frame 0)",
-     "1.5-4.5 s: green line zoom-punches in: 'I write the emails your dentist sends. All 6 offices.'",
-     "4.5-6 s: '4 more versions at 18:00 · one prompt'"
-    ],
-    "source_trend": "ref-20261124-01 (result in first frame)",
-    "audio": "no_audio",
-    "status": "to make"
-   },
-   {
-    "kind": "story",
-    "day": "2026-11-25",
-    "time": "12:35",
-    "role": "prompt hint",
-    "seconds": 5,
-    "scenes": [
-     "0-1 s: chip 'Prompt hint' pops",
-     "1-4 s: line types at the end of a rewrite prompt: \"Don't add numbers I didn't give you.\" ; a fake-looking stat in red gets crossed out",
-     "4-5 s: 'Stops made-up stats · Free Starter 10 → link in bio'"
-    ],
-    "source_trend": "ref-20261124-11 (stop X / add this line)",
-    "audio": "no_audio",
-    "status": "to make"
-   }
-  ]
- }
+  "updated_at": "2026-11-24 13:35"
 }

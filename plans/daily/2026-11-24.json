@@ -1,83 +1,84 @@
 {
- "date": "2026-11-24",
- "made_by": "🎬 Директор",
- "made_at": "2026-11-24 10:50",
- "note": "Reel + story 12:30 already produced in posts/2026-w48-v2 (not duplicated). Poster runs 12:37, after the 12:30/12:35 story slots: if a story slot has passed, schedule it +20 min (12:50/12:55) the same day.",
- "items": {
-  "reel": {
-   "kind": "reel",
-   "day": "2026-11-24",
-   "time": "18:00",
-   "from_plan": "plans/2026-w48-v2.json",
-   "media": "posts/2026-w48-v2/r1_1124_thanksgiving_premortem.mp4",
-   "hook": "I asked AI why my Thanksgiving dinner failed. It hasn't happened yet.",
-   "source_trend": "ref-20261123-10",
-   "status": "ready (maker 2026-11-24 09:25)",
-   "replaces_old": "Metricool id 438975401 (old style, 18:00) → draft when new one is scheduled"
-  },
-  "threads": [
-   {
-    "day": "2026-11-24",
-    "time": "15:30",
-    "network": "threads",
-    "type": "tip_prompt_with_result",
-    "text": "Stop typing \"make it sound human.\" Paste this under your draft:\n\nRewrite so I could text it to a coworker.\n- Max 15 words a sentence\n- Use contractions\n- Keep every fact I gave you\n- Cut any sentence that says nothing\n\nTried it on: \"Per my last email, I wanted to circle back regarding the status of the Q4 budget approval, as we are still awaiting your confirmation in order to proceed.\"\n\nGot back: \"Following up on the Q4 budget. We need your OK before we move. Can you confirm?\"",
-    "has_link": false,
-    "topic_tag": "AI Prompts",
-    "image": null,
-    "source_trend": "ref-20261124-11 https://www.threads.com/@hidayat._.ali9/post/DgGZJIhCH9m",
-    "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
-   },
-   {
-    "day": "2026-11-24",
-    "time": "19:30",
-    "network": "threads",
-    "type": "question",
-    "text": "Thanksgiving week question.\n\nMost people ask AI for the turkey recipe. I'd hand it the logistics: who brings what, when the bird goes in, who can't eat dairy.\n\nIf you could give one Thanksgiving job to AI this year, which one would it be?",
-    "has_link": false,
-    "topic_tag": "Thanksgiving",
-    "image": null,
-    "source_trend": "ref-20261124-07 (relatable 'asking AI about everything') + Threads conversation rule",
-    "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
-   },
-   {
-    "day": "2026-11-24",
-    "time": "22:30",
-    "network": "threads",
-    "type": "list",
-    "text": "There are thousands of AI tools. A normal workweek needs one chat window and four prompts:\n\n1. Messy email: \"Ask in line 1, max 5 sentences, keep my facts\"\n2. Chaotic to-do list: \"Sort it into urgent / important / later / delete\"\n3. Task you keep avoiding: \"Break it into 25-min steps, first one under 5 min\"\n4. Big plan: \"Imagine it failed in 6 months. Top 10 reasons, then fixes for the top 3\"\n\nFull versions, free: https://makc9k.gumroad.com/l/starter10",
-    "has_link": true,
-    "topic_tag": "AI Prompts",
-    "image": null,
-    "source_trend": "ref-20261124-10 https://www.threads.com/@brisk.vision/post/DgCVHdJkdeQ",
-    "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
-   }
-  ],
-  "stories": [
-   {
-    "kind": "story",
-    "day": "2026-11-24",
-    "time": "12:30",
-    "from_plan": "plans/2026-w48-v2.json",
-    "media": "posts/2026-w48-v2/s1_1124_story.mp4",
-    "role": "Reel teaser",
-    "status": "ready"
-   },
-   {
-    "kind": "story",
-    "day": "2026-11-24",
-    "time": "12:35",
-    "role": "prompt hint",
-    "seconds": 6,
-    "scenes": [
-     "0-1 s: red strip slams in 'Before any big plan, type this:' (already moving in frame 0)",
-     "1-4 s: prompt types in a chat bar: \"Imagine this already failed. What went wrong?\" with zoom-punch on 'already failed'",
-     "4-6 s: green card 'Then ask for fixes for the top 3' + 'Full demo at 18:00'"
+  "date": "2026-11-24",
+  "made_by": "🎬 Директор",
+  "made_at": "2026-11-24 10:50",
+  "note": "Reel + story 12:30 already produced in posts/2026-w48-v2 (not duplicated). Poster runs 12:37, after the 12:30/12:35 story slots: if a story slot has passed, schedule it +20 min (12:50/12:55) the same day. | Update 13:35 (Director re-run): Metricool at 13:30 shows NO new items for 24.11 (only old-style Reel 438975401 at 18:00) — Poster has not scheduled yet. Story slots 12:30/12:35 passed → schedule them 16:00/16:05 today. Replace old 18:00 Reel with r1_1124 (draft the old one). Threads 15:30/19:30/22:30 still valid. Analyst recs read: 'Comment WORD' NOT used (no active auto-reply in TEAM.md); 1 of 3 Threads is a question — done. Judge report: none yet.",
+  "items": {
+    "reel": {
+      "kind": "reel",
+      "day": "2026-11-24",
+      "time": "18:00",
+      "from_plan": "plans/2026-w48-v2.json",
+      "media": "posts/2026-w48-v2/r1_1124_thanksgiving_premortem.mp4",
+      "hook": "I asked AI why my Thanksgiving dinner failed. It hasn't happened yet.",
+      "source_trend": "ref-20261123-10",
+      "status": "ready (maker 2026-11-24 09:25)",
+      "replaces_old": "Metricool id 438975401 (old style, 18:00) → draft when new one is scheduled"
+    },
+    "threads": [
+      {
+        "day": "2026-11-24",
+        "time": "15:30",
+        "network": "threads",
+        "type": "tip_prompt_with_result",
+        "text": "Stop typing \"make it sound human.\" Paste this under your draft:\n\nRewrite so I could text it to a coworker.\n- Max 15 words a sentence\n- Use contractions\n- Keep every fact I gave you\n- Cut any sentence that says nothing\n\nTried it on: \"Per my last email, I wanted to circle back regarding the status of the Q4 budget approval, as we are still awaiting your confirmation in order to proceed.\"\n\nGot back: \"Following up on the Q4 budget. We need your OK before we move. Can you confirm?\"",
+        "has_link": false,
+        "topic_tag": "AI Prompts",
+        "image": null,
+        "source_trend": "ref-20261124-11 https://www.threads.com/@hidayat._.ali9/post/DgGZJIhCH9m",
+        "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
+      },
+      {
+        "day": "2026-11-24",
+        "time": "19:30",
+        "network": "threads",
+        "type": "question",
+        "text": "Thanksgiving week question.\n\nMost people ask AI for the turkey recipe. I'd hand it the logistics: who brings what, when the bird goes in, who can't eat dairy.\n\nIf you could give one Thanksgiving job to AI this year, which one would it be?",
+        "has_link": false,
+        "topic_tag": "Thanksgiving",
+        "image": null,
+        "source_trend": "ref-20261124-07 (relatable 'asking AI about everything') + Threads conversation rule",
+        "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
+      },
+      {
+        "day": "2026-11-24",
+        "time": "22:30",
+        "network": "threads",
+        "type": "list",
+        "text": "There are thousands of AI tools. A normal workweek needs one chat window and four prompts:\n\n1. Messy email: \"Ask in line 1, max 5 sentences, keep my facts\"\n2. Chaotic to-do list: \"Sort it into urgent / important / later / delete\"\n3. Task you keep avoiding: \"Break it into 25-min steps, first one under 5 min\"\n4. Big plan: \"Imagine it failed in 6 months. Top 10 reasons, then fixes for the top 3\"\n\nFull versions, free: https://makc9k.gumroad.com/l/starter10",
+        "has_link": true,
+        "topic_tag": "AI Prompts",
+        "image": null,
+        "source_trend": "ref-20261124-10 https://www.threads.com/@brisk.vision/post/DgCVHdJkdeQ",
+        "reply_plan": "owner/poster replies to every answer in the first 60 min; no engagement bait"
+      }
     ],
-    "source_trend": "ref-20261123-10 (same pre-mortem prompt as today's Reel)",
-    "audio": "no_audio (stories: baked only; keep silent)",
-    "status": "to make (maker 11:07)"
-   }
-  ]
- }
+    "stories": [
+      {
+        "kind": "story",
+        "day": "2026-11-24",
+        "time": "12:30",
+        "from_plan": "plans/2026-w48-v2.json",
+        "media": "posts/2026-w48-v2/s1_1124_story.mp4",
+        "role": "Reel teaser",
+        "status": "ready"
+      },
+      {
+        "kind": "story",
+        "day": "2026-11-24",
+        "time": "12:35",
+        "role": "prompt hint",
+        "seconds": 6,
+        "scenes": [
+          "0-1 s: red strip slams in 'Before any big plan, type this:' (already moving in frame 0)",
+          "1-4 s: prompt types in a chat bar: \"Imagine this already failed. What went wrong?\" with zoom-punch on 'already failed'",
+          "4-6 s: green card 'Then ask for fixes for the top 3' + 'Full demo at 18:00'"
+        ],
+        "source_trend": "ref-20261123-10 (same pre-mortem prompt as today's Reel)",
+        "audio": "no_audio (stories: baked only; keep silent)",
+        "status": "to make (maker 11:07)"
+      }
+    ]
+  },
+  "updated_at": "2026-11-24 13:35"
 }
