@@ -198,7 +198,8 @@
   "how_we_adapt": "Series 'What happens when you ask ChatGPT to…' — '…rewrite your resume like a recruiter', '…find the hidden fees in your contract'. Screen-record the chat.",
   "metric_note": "big account; ratio vs followers low, vs own recent typical ~25×",
   "used_in": [
-   "w48v2-d1-reel"
+   "w48v2-d1-reel",
+   "daily-2026-11-24-story-1235"
   ]
  },
  {
@@ -225,7 +226,10 @@
  {
   "id": "ref-20261124-01",
   "date_found": "2026-11-24",
-  "used_in": [],
+  "used_in": [
+   "daily-2026-11-25-reel",
+   "daily-2026-11-25-story-1230"
+  ],
   "platform": "tiktok",
   "url": "https://www.tiktok.com/@prompt.editor3/video/7708350761721220370",
   "creator": "@prompt.editor3",
@@ -338,7 +342,9 @@
  {
   "id": "ref-20261124-07",
   "date_found": "2026-11-24",
-  "used_in": [],
+  "used_in": [
+   "daily-2026-11-24-thread-1930"
+  ],
   "platform": "instagram",
   "url": "https://www.instagram.com/reel/Df0-QX_hCKH/",
   "creator": "@rorythelynchpin",
@@ -357,7 +363,9 @@
  {
   "id": "ref-20261124-08",
   "date_found": "2026-11-24",
-  "used_in": [],
+  "used_in": [
+   "daily-2026-11-25-thread-2230"
+  ],
   "platform": "threads",
   "url": "https://www.threads.com/@design.deb/post/Df_W07KkxbH",
   "creator": "@design.deb",
@@ -376,7 +384,9 @@
  {
   "id": "ref-20261124-09",
   "date_found": "2026-11-24",
-  "used_in": [],
+  "used_in": [
+   "daily-2026-11-25-thread-1530"
+  ],
   "platform": "threads",
   "url": "https://www.threads.com/@harboris.ai/post/Df1ptdygQ6y",
   "creator": "@harboris.ai",
@@ -395,7 +405,9 @@
  {
   "id": "ref-20261124-10",
   "date_found": "2026-11-24",
-  "used_in": [],
+  "used_in": [
+   "daily-2026-11-24-thread-2230"
+  ],
   "platform": "threads",
   "url": "https://www.threads.com/@brisk.vision/post/DgCVHdJkdeQ",
   "creator": "@brisk.vision",
@@ -414,7 +426,12 @@
  {
   "id": "ref-20261124-11",
   "date_found": "2026-11-24",
-  "used_in": [],
+  "used_in": [
+   "daily-2026-11-25-story-1235",
+   "daily-2026-11-24-thread-1530",
+   "daily-2026-11-25-thread-1930",
+   "daily-2026-11-25-thread-2230"
+  ],
   "platform": "threads",
   "url": "https://www.threads.com/@hidayat._.ali9/post/DgGZJIhCH9m",
   "creator": "@hidayat._.ali9",

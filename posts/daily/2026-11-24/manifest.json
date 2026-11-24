@@ -1,0 +1,98 @@
+{
+ "date": "2026-11-24",
+ "made_by": "🎨 Мейкер",
+ "made_at": "2026-11-24 13:40",
+ "plan": "plans/daily/2026-11-24.json",
+ "items": [
+  {
+   "kind": "reel",
+   "day": "2026-11-24",
+   "time": "18:00",
+   "media": [
+    "posts/2026-w48-v2/r1_1124_thanksgiving_premortem.mp4"
+   ],
+   "media_url": [
+    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/2026-w48-v2/r1_1124_thanksgiving_premortem.mp4"
+   ],
+   "caption_from": "plans/2026-w48-v2.json (d1 reel caption)",
+   "networks": [
+    "instagram"
+   ],
+   "status": "ready (made 2026-11-24 09:25, not re-rendered)",
+   "reference_match": "see posts/2026-w48-v2/manifest.json",
+   "replaces_old": "Metricool id 438975401 (old style, 18:00) → draft when new one is scheduled"
+  },
+  {
+   "kind": "story",
+   "day": "2026-11-24",
+   "time": "12:30",
+   "media": [
+    "posts/2026-w48-v2/s1_1124_story.mp4"
+   ],
+   "media_url": [
+    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/2026-w48-v2/s1_1124_story.mp4"
+   ],
+   "networks": [
+    "instagram"
+   ],
+   "status": "ready (w48-v2)"
+  },
+  {
+   "kind": "story",
+   "day": "2026-11-24",
+   "time": "12:35",
+   "media": [
+    "posts/daily/2026-11-24/story_1124_1235_hint.mp4"
+   ],
+   "media_url": [
+    "https://raw.githubusercontent.com/Makc9k/aiedge-media/main/posts/daily/2026-11-24/story_1124_1235_hint.mp4"
+   ],
+   "networks": [
+    "instagram"
+   ],
+   "seconds": 6,
+   "audio": "silent AAC (no_audio per plan)",
+   "status": "ready 13:35 — slot 12:35 already passed; poster: schedule at the next free slot today (e.g. 16:00) or skip",
+   "reference_match": "ref-20261123-10 'what happens when you ask AI to…' chat demo: kept typing the prompt into a chat bar + result promise; changed to a 6 s story with red strip hook, zoom-punch on 'already failed', green next-step card"
+  },
+  {
+   "kind": "thread",
+   "day": "2026-11-24",
+   "time": "15:30",
+   "networks": [
+    "threads"
+   ],
+   "text": "Stop typing \"make it sound human.\" Paste this under your draft:\n\nRewrite so I could text it to a coworker.\n- Max 15 words a sentence\n- Use contractions\n- Keep every fact I gave you\n- Cut any sentence that says nothing\n\nTried it on: \"Per my last email, I wanted to circle back regarding the status of the Q4 budget approval, as we are still awaiting your confirmation in order to proceed.\"\n\nGot back: \"Following up on the Q4 budget. We need your OK before we move. Can you confirm?\"",
+   "topic_tag": "AI Prompts",
+   "image": null,
+   "has_link": false,
+   "source_trend": "ref-20261124-11 https://www.threads.com/@hidayat._.ali9/post/DgGZJIhCH9m"
+  },
+  {
+   "kind": "thread",
+   "day": "2026-11-24",
+   "time": "19:30",
+   "networks": [
+    "threads"
+   ],
+   "text": "Thanksgiving week question.\n\nMost people ask AI for the turkey recipe. I'd hand it the logistics: who brings what, when the bird goes in, who can't eat dairy.\n\nIf you could give one Thanksgiving job to AI this year, which one would it be?",
+   "topic_tag": "Thanksgiving",
+   "image": null,
+   "has_link": false,
+   "source_trend": "ref-20261124-07 (relatable 'asking AI about everything') + Threads conversation rule"
+  },
+  {
+   "kind": "thread",
+   "day": "2026-11-24",
+   "time": "22:30",
+   "networks": [
+    "threads"
+   ],
+   "text": "There are thousands of AI tools. A normal workweek needs one chat window and four prompts:\n\n1. Messy email: \"Ask in line 1, max 5 sentences, keep my facts\"\n2. Chaotic to-do list: \"Sort it into urgent / important / later / delete\"\n3. Task you keep avoiding: \"Break it into 25-min steps, first one under 5 min\"\n4. Big plan: \"Imagine it failed in 6 months. Top 10 reasons, then fixes for the top 3\"\n\nFull versions, free: https://makc9k.gumroad.com/l/starter10",
+   "topic_tag": "AI Prompts",
+   "image": null,
+   "has_link": true,
+   "source_trend": "ref-20261124-10 https://www.threads.com/@brisk.vision/post/DgCVHdJkdeQ"
+  }
+ ]
+}
