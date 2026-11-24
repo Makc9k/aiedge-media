@@ -6,11 +6,11 @@
     "ua": "Скаут референсів",
     "role": "Finds small creators whose posts blew up and saves them as references",
     "cron": {
-      "m": 37,
-      "h": 8,
+      "m": 2,
+      "h": 9,
       "dow": "*"
     },
-    "schedule": "Daily 08:37",
+    "schedule": "Daily 09:02",
     "color": "#22D3EE",
     "match": "Скаут"
   },
@@ -21,11 +21,11 @@
     "ua": "Аналітик",
     "role": "Reads yesterday's numbers every morning, tracks the pace to the goal, tells the director what to change",
     "cron": {
-      "m": 23,
+      "m": 47,
       "h": 9,
       "dow": "*"
     },
-    "schedule": "Daily 09:23",
+    "schedule": "Daily 09:47",
     "color": "#A78BFA",
     "match": "Аналітик"
   },
@@ -36,11 +36,11 @@
     "ua": "Креативний директор",
     "role": "Plans every day: 1 Reel + 3 Threads posts + stories, each built on a fresh reference",
     "cron": {
-      "m": 13,
+      "m": 23,
       "h": 10,
       "dow": "*"
     },
-    "schedule": "Daily 10:13",
+    "schedule": "Daily 10:23",
     "color": "#F472B6",
     "match": "Директор"
   },
@@ -51,11 +51,11 @@
     "ua": "Контент-мейкер",
     "role": "Makes the daily Reel, stories and images with our motion engine",
     "cron": {
-      "m": 17,
+      "m": 7,
       "h": 11,
       "dow": "*"
     },
-    "schedule": "Daily 11:17",
+    "schedule": "Daily 11:07",
     "color": "#FBBF24",
     "match": "Мейкер"
   },
@@ -66,11 +66,11 @@
     "ua": "Постер",
     "role": "Schedules the daily Reel, 3 Threads posts and stories in Metricool",
     "cron": {
-      "m": 43,
-      "h": 13,
+      "m": 37,
+      "h": 12,
       "dow": "*"
     },
-    "schedule": "Daily 13:43",
+    "schedule": "Daily 12:37",
     "color": "#34D399",
     "match": "Постер"
   },
@@ -81,11 +81,11 @@
     "ua": "Суддя",
     "role": "Fact-checks every agent: numbers, links, claims. Nothing fake gets through",
     "cron": {
-      "m": 47,
-      "h": 19,
+      "m": 37,
+      "h": 15,
       "dow": "*"
     },
-    "schedule": "Daily 19:47",
+    "schedule": "Daily 15:37",
     "color": "#F87171",
     "match": "Суддя"
   },

@@ -6,17 +6,19 @@ Owner notes (Ukrainian) live in the Obsidian vault on the owner's PC: `obsidian/
 
 ## Daily pipeline (all times Europe/Kyiv) — the team works EVERY day
 
+**Schedule rule:** the owner's PC is on from ~09:00 during the day, so the whole chain runs 09:02–15:37. These times override any times written in an agent's own prompt.
+
 **Daily quota per publishing day:** 1 Instagram Reel (18:00) + 3 Threads posts (15:30, 19:30, 22:30) + 2 stories (12:30, 12:35).
 Each day the chain prepares the missing items for today (slots ≥2 h ahead) and fully for tomorrow.
 
 | When | Agent | Reads | Writes |
 |---|---|---|---|
-| Daily 08:37 | 🔎 Scout | web, Reddit, Instagram/Threads/TikTok (view only), Buzzfy | `references/library.json`, `references/YYYY-MM-DD.md` (section «Для директора сьогодні»), `obsidian/Etsy/Тренди/` |
-| Daily 09:23 | 📊 Analyst | Metricool, Buzzfy, Gumroad (view only) | `status/goal.json` progress, `obsidian/Etsy/Статистика/YYYY-MM-DD AI Edge.md` («Рекомендації для директора») |
-| Daily 10:13 | 🎬 Creative director | scout + analyst + judge reports | `plans/daily/YYYY-MM-DD.json` (date = publish day) + `obsidian/Etsy/Контент-план/YYYY-MM-DD.md` |
-| Daily 11:17 | 🎨 Content maker | `plans/daily/*.json` | `posts/daily/YYYY-MM-DD/*` + `manifest.json` |
-| Daily 13:43 | 📅 Poster | `posts/daily/*/manifest.json` + Threads texts from plans | Metricool schedule + `obsidian/Etsy/Сторінки/Розклад AI Edge.md` |
-| Daily 19:47 | ⚖️ Judge | everything changed in 24 h + tomorrow's quota in Metricool | `obsidian/Etsy/Сторінки/Суддя/YYYY-MM-DD.md` |
+| Daily 09:02 | 🔎 Scout | web, Reddit, Instagram/Threads/TikTok (view only), Buzzfy | `references/library.json`, `references/YYYY-MM-DD.md` (section «Для директора сьогодні»), `obsidian/Etsy/Тренди/` |
+| Daily 09:47 | 📊 Analyst | Metricool, Buzzfy, Gumroad (view only) | `status/goal.json` progress, `obsidian/Etsy/Статистика/YYYY-MM-DD AI Edge.md` («Рекомендації для директора») |
+| Daily 10:23 | 🎬 Creative director | scout + analyst + judge reports | `plans/daily/YYYY-MM-DD.json` (date = publish day) + `obsidian/Etsy/Контент-план/YYYY-MM-DD.md` |
+| Daily 11:07 | 🎨 Content maker | `plans/daily/*.json` | `posts/daily/YYYY-MM-DD/*` + `manifest.json` |
+| Daily 12:37 | 📅 Poster | `posts/daily/*/manifest.json` + Threads texts from plans | Metricool schedule + `obsidian/Etsy/Сторінки/Розклад AI Edge.md` |
+| Daily 15:37 | ⚖️ Judge | everything changed in 24 h + tomorrow's quota in Metricool | `obsidian/Etsy/Сторінки/Суддя/YYYY-MM-DD.md` |
 | Sun 11:44 | 🧭 Niche scout (products) | web | `obsidian/Etsy/Розвідка/...` |
 
 The director must apply the latest analyst «Рекомендації для директора» and judge «Для креативного директора».
