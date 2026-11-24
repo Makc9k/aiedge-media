@@ -166,3 +166,8 @@ both check them:
   `s4` product reveal, `s5` CTA. Copy patterns from here.
 - `tools/render_week_template.py` — static 1080×1350 post template.
 - `tools/motion/assets/` — page renders of the Starter 10 PDF.
+
+## 🔇 Silent browsing (all agents, added 2026-11-24)
+The built-in browser runs on the owner's PC and its sound goes to his headphones. After EVERY page open/navigation in the browser (Instagram, Threads, TikTok, YouTube, Reddit, any page with media) immediately run javascript_tool:
+`document.querySelectorAll('video,audio').forEach(m=>{m.muted=true;m.pause();}); new MutationObserver(()=>document.querySelectorAll('video,audio').forEach(m=>{m.muted=true;m.pause();})).observe(document.documentElement,{childList:true,subtree:true});`
+Never play videos with sound. Read views/followers/hooks from page text or screenshots. Prefer WebFetch/search over the browser when it is enough.
